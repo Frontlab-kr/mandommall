@@ -1,0 +1,21 @@
+.cookie-form{
+background-color: #fff;
+border:1px solid silver;
+border-radius: 10px;
+left: 50px;
+bottom: 50px;
+max-height: 90%;
+max-width: 400px;
+overflow: auto;
+padding: 2rem;
+position: fixed;
+width: 100%;
+z-index:999;
+}
+.cookie-form .cookie-body p{
+font-size: 14px;
+}
+.cookie-img{
+width: 38px;
+height: 38px;
+}

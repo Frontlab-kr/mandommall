@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+    />
+    <!-- js -->
+    <script src="../assets/js/mobile/common.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="../assets/scss/mobile/common.css" />
+  </head>
+  <body>
+    <div class="mandom mandom-gatsby">
+      <div id="header"></div>
+      <div id="menu"></div>
+      <div class="mandom-body">
+        <div class="mandom-category">
+          <div class="mandom-category-menu mandom-category-menu--black">
+            <a href="" class="active">헤어왁스</a>
+            <a href="">헤어스프레이</a>
+            <a href="">헤어젤/헤어폼</a>
+            <a href="">헤어케어</a>
+            <a href="">헤어스프레이</a>
+            <a href="">헤어왁스</a>
+            <a href="">헤어스프레이</a>
+            <a href="">헤어젤/헤어폼</a>
+            <a href="">헤어케어</a>
+            <a href="">헤어스프레이</a>
+          </div>
+          <div class="mandom-category-menu mandom-category-menu--white">
+            <a href="" class="active">무빙러버왁스</a>
+            <a href="">헤어잼</a>
+            <a href="">스타일링왁스</a>
+            <a href="">메타러버왁스</a>
+            <a href="">스타일링왁스</a>
+            <a href="">헤어잼</a>
+            <a href="">스타일링왁스</a>
+            <a href="">메타러버왁스</a>
+            <a href="">스타일링왁스</a>
+          </div>
+          <script>
+            $(document).ready(function () {
+              $('.mandom-category-menu a').on('click', function () {
+                $(this)
+                  .parents('.mandom-category-menu')
+                  .find('a')
+                  .removeClass('active');
+                $(this).addClass('active');
+                return false;
+              });
+            });
+          </script>
+        </div>
+        <div class="mandom-list">
+          <div class="mandom-list-head">
+            <div class="mandom-list-head__start">
+              <h6>총 <strong>36</strong>개</h6>
+            </div>
+            <div class="mandom-list-head__end">
+              <div class="mandom-list-head__select">
+                <select>
+                  <option selected>판매순</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <button class="mandom-list-head__type">현재 리스트보기</button>
+            </div>
+          </div>
+          <div class="mandom-list-list"></div>
+        </div>
+        <script>
+          var stateList = 'list';
+          $(document).ready(function () {
+            $('.mandom-list').addClass('mandom-list--' + stateList);
+            $('.mandom-list-head__type').on('click', function () {
+              if ($('.mandom-list').hasClass('mandom-list--list')) {
+                $('.mandom-list').removeClass('mandom-list--list');
+                $('.mandom-list').addClass('mandom-list--grid');
+              } else if ($('.mandom-list').hasClass('mandom-list--grid')) {
+                $('.mandom-list').removeClass('mandom-list--grid');
+                $('.mandom-list').addClass('mandom-list--list');
+              }
+            });
+          });
+        </script>
+        <script>
+          $(document).ready(function () {
+            $('.mandom-list-list').load(
+              '../components/mobile/product.html',
+              function () {
+                // load가 완료된 후 실행할 코드
+                var $html = $('.mandom-list-list .mandom-product')
+                  .first()
+                  .clone();
+                var $row = $('.mandom-list-list');
+                for (var i = 1; i < 6; i++) {
+                  $row.append($html.clone());
+                }
+              }
+            );
+          });
+        </script>
+
+        <div class="mandom-list-button">
+          <button
+            type="button"
+            class="btn btn-outline-secondary btn-lg rounded-pill"
+          >
+            더보기
+          </button>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>

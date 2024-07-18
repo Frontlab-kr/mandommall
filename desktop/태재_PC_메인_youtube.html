@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- masonry -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+    />
+    <!-- js -->
+    <script src="../assets/js/common.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="../assets/scss/desktop/common.css" />
+  </head>
+  <body>
+    <div class="tj">
+      <div id="header"></div>
+      <div class="tj-body">
+        <div class="tj-inner">
+          <div class="tj-main">
+            <style>
+              .tj-header {
+                border-bottom: none;
+              }
+            </style>
+
+            <div class="tj-main-education-ai">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="tj-main-education-ai__start">
+                      <div class="tj-main-education-ai__title">
+                        How should education<br />
+                        in the age of AI change?
+                      </div>
+                      <div class="tj-main-education-ai__text">
+                        The emergence of generative artificial intelligence
+                        (AI),
+                        <br />
+                        which asks and answers like a human, <br />
+                        is shaking not only the industry but also the
+                        educational field.
+                        <br />
+                        With the introduction of chatbots in full swing, <br />
+                        it is a discussion on the topic of "How should education
+                        in the AI era change?"
+                      </div>
+                      <div class="tj-main-education-ai__table">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th>Period</th>
+                              <td>2024.03.10 ~ 2024.03.31</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tj-main-education-ai__button">
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark btn-arrow-right"
+                        >
+                          <p><strong>JOIN THIS QUESTION</strong></p>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="tj-main-education-ai__end">
+                      <div class="tj-main-education-ai__swiper">
+                        <iframe
+                          width="560"
+                          height="315"
+                          src="https://www.youtube.com/embed/ZncbtRo7RXs?enablejsapi=1"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="tj-main-education-ai__start">
+                      <div class="tj-main-education-ai__title">
+                        How should education<br />
+                        in the age of AI change?
+                      </div>
+                      <div class="tj-main-education-ai__text">
+                        The emergence of generative artificial intelligence
+                        (AI),
+                        <br />
+                        which asks and answers like a human, <br />
+                        is shaking not only the industry but also the
+                        educational field.
+                        <br />
+                        With the introduction of chatbots in full swing, <br />
+                        it is a discussion on the topic of "How should education
+                        in the AI era change?"
+                      </div>
+                      <div class="tj-main-education-ai__table">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th>Period</th>
+                              <td>2024.03.10 ~ 2024.03.31</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="tj-main-education-ai__button">
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark btn-arrow-right"
+                        >
+                          <p><strong>JOIN THIS QUESTION</strong></p>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="tj-main-education-ai__end">
+                      <div class="tj-main-education-ai__swiper">
+                        <iframe
+                          width="560"
+                          height="315"
+                          src="https://www.youtube.com/embed/ZncbtRo7RXs?enablejsapi=1"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <script>
+              var tag = document.createElement('script');
+              tag.src = 'https://www.youtube.com/iframe_api';
+              var firstScriptTag = document.getElementsByTagName('script')[0];
+              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+              var players = [];
+
+              function onYouTubeIframeAPIReady() {
+                var iframes = document.querySelectorAll(
+                  '.tj-main-education-ai__swiper iframe'
+                );
+                iframes.forEach((iframe, index) => {
+                  players[index] = new YT.Player(iframe, {
+                    events: {
+                      onReady: onPlayerReady,
+                      onStateChange: onPlayerStateChange,
+                    },
+                  });
+                });
+              }
+
+              function onPlayerReady(event) {
+                // Do something when the player is ready
+              }
+
+              function onPlayerStateChange(event) {
+                // Do something when the player state changes
+              }
+
+              var swiper01 = new Swiper('.tj-main-education-ai .swiper', {
+                loop: true,
+                effect: 'fade',
+                autoplay: {
+                  delay: 2500,
+                  disableOnInteraction: false,
+                },
+                pagination: {
+                  el: '.tj-main-education-ai .swiper-pagination',
+                  clickable: true,
+                  renderBullet: function (index, className) {
+                    return (
+                      '<span class="' +
+                      className +
+                      '">' +
+                      0 +
+                      (index + 1) +
+                      '</span>'
+                    );
+                  },
+                },
+                on: {
+                  slideChange: function () {
+                    console.log(players);
+                    players.forEach((player) => {
+                      player.stopVideo();
+                    });
+                  },
+                },
+              });
+            </script>
+            <div class="tj-main-big-question">
+              <div class="tj-main-big-question-head">
+                <h2>Meet the HOT and NEW Big Question</h2>
+                <a href="">See More</a>
+              </div>
+              <div class="tj-main-big-question-list">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a href="" class="tj-board-grid-item">
+                        <div class="tj-board-grid-item__thumb">
+                          <div class="tj-board-grid-item__badge">
+                            <span class="badge text-bg-primary">NEW</span>
+                            <span class="badge text-bg-warning">HOT</span>
+                            <span class="badge text-bg-dark">FINISH</span>
+                            <span class="badge text-bg-danger">ONGOING</span>
+                          </div>
+                          <img src="https://picsum.photos/400/400" alt="" />
+                        </div>
+                        <div class="tj-board-grid-item__contents">
+                          <div class="tj-board-grid-item__head">
+                            <!-- <div class="tj-board-grid-item__category">
+                              Climate
+                            </div> -->
+                            <div class="tj-board-grid-item__date">
+                              2024.03.01
+                            </div>
+                          </div>
+                          <div class="tj-board-grid-item__text">
+                            New cooperative relationship between the U.S. and
+                            China New cooperative relation New cooperative
+                            relationship between the U.S. and China New
+                            cooperative relation New cooperative relationship
+                            between the U.S. and China New cooperative relation
+                            New cooperative relationship between the U.S. and
+                            China New cooperative relation
+                          </div>
+                          <div class="tj-board-grid-item__period">
+                            <strong>Period</strong>
+                            2024.03.10 ~ 2024.03.31
+                          </div>
+                          <hr />
+                          <div class="tj-board-grid-item__info">
+                            <p class="tj-board-grid-item__info-item">
+                              Thoughts
+                              <span>1,123,456</span>
+                            </p>
+                            <p class="tj-board-grid-item__info-item">
+                              <i class="thumb_up"></i>
+                              <span>1,123,456</span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="" class="tj-main-big-question-list-item">
+                        <div class="tj-main-big-question-list-item__thumb">
+                          <img src="https://picsum.photos/600/300" alt="" />
+                          <div class="tj-main-big-question-list-item__badge">
+                            <span class="badge text-bg-primary">NEW</span>
+                          </div>
+                        </div>
+                        <div class="tj-main-big-question-list-item__title">
+                          Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.
+                        </div>
+                        <div class="tj-main-big-question-list-item__thoughts">
+                          Thoughts<strong>35</strong>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a href="" class="tj-main-big-question-list-item">
+                        <div class="tj-main-big-question-list-item__thumb">
+                          <img src="https://picsum.photos/600/300" alt="" />
+                          <div class="tj-main-big-question-list-item__badge">
+                            <span class="badge text-bg-primary">NEW</span>
+                          </div>
+                        </div>
+                        <div class="tj-main-big-question-list-item__title">
+                          Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.Creation of new value through K-Culture
+                          industy.
+                        </div>
+                        <div class="tj-main-big-question-list-item__thoughts">
+                          Thoughts<strong>35</strong>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <script>
+                  var swiper02 = new Swiper(
+                    '.tj-main-big-question-list .swiper',
+                    {
+                      slidesPerView: 3,
+                      spaceBetween: 24,
+                    }
+                  );
+                </script>
+              </div>
+            </div>
+
+            <div class="tj-main-whats-on">
+              <div class="tj-main-whats-on-head">
+                <h2>What's On the Big Question</h2>
+                <a href="">See More</a>
+              </div>
+
+              <div class="tj-main-whats-on-swiper">
+                <div class="tj-main-whats-on-swiper__inner">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="tj-main-whats-on-swiper__slide">
+                          <div class="tj-main-whats-on-swiper__bg">
+                            <img src="https://picsum.photos/972/550" alt="" />
+                          </div>
+                          <div class="tj-main-whats-on-swiper__title">
+                            Why don't we have <br />
+                            better robots yet?
+                          </div>
+                          <div class="tj-main-whats-on-swiper__text">
+                            Why hasn't the dream of having a robot at home to do
+                            your chores become a reality yet?<br />
+                            With three decades of research expertise in the
+                            field,
+                            <br />
+                            roboticist Ken Goldberg sheds light on the clumsy
+                            truth about robots — <br />
+                            and what it will take to build more dexterous
+                            machines to work in a warehouse or help out at home.
+                          </div>
+                          <div class="tj-main-whats-on-swiper__button">
+                            <button
+                              type="button"
+                              class="btn btn-outline-light btn-plus-white"
+                            >
+                              <p><strong>SEE MORE</strong></p>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-whats-on-swiper__slide">
+                          <div class="tj-main-whats-on-swiper__bg">
+                            <img src="https://picsum.photos/972/550" alt="" />
+                          </div>
+                          <div class="tj-main-whats-on-swiper__title">
+                            Why don't we have <br />
+                            better robots yet?
+                          </div>
+                          <div class="tj-main-whats-on-swiper__text">
+                            Why hasn't the dream of having a robot at home to do
+                            your chores become a reality yet?<br />
+                            With three decades of research expertise in the
+                            field,
+                            <br />
+                            roboticist Ken Goldberg sheds light on the clumsy
+                            truth about robots — <br />
+                            and what it will take to build more dexterous
+                            machines to work in a warehouse or help out at home.
+                          </div>
+                          <div class="tj-main-whats-on-swiper__button">
+                            <button
+                              type="button"
+                              class="btn btn-outline-light btn-plus-white"
+                            >
+                              <p><strong>SEE MORE</strong></p>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-whats-on-swiper__slide">
+                          <div class="tj-main-whats-on-swiper__bg">
+                            <img src="https://picsum.photos/972/550" alt="" />
+                          </div>
+                          <div class="tj-main-whats-on-swiper__title">
+                            Why don't we have <br />
+                            better robots yet?
+                          </div>
+                          <div class="tj-main-whats-on-swiper__text">
+                            Why hasn't the dream of having a robot at home to do
+                            your chores become a reality yet?<br />
+                            With three decades of research expertise in the
+                            field,
+                            <br />
+                            roboticist Ken Goldberg sheds light on the clumsy
+                            truth about robots — <br />
+                            and what it will take to build more dexterous
+                            machines to work in a warehouse or help out at home.
+                          </div>
+                          <div class="tj-main-whats-on-swiper__button">
+                            <button
+                              type="button"
+                              class="btn btn-outline-light btn-plus-white"
+                            >
+                              <p><strong>SEE MORE</strong></p>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-whats-on-swiper__slide">
+                          <div class="tj-main-whats-on-swiper__bg">
+                            <img src="https://picsum.photos/972/550" alt="" />
+                          </div>
+                          <div class="tj-main-whats-on-swiper__title">
+                            Why don't we have <br />
+                            better robots yet?
+                          </div>
+                          <div class="tj-main-whats-on-swiper__text">
+                            Why hasn't the dream of having a robot at home to do
+                            your chores become a reality yet?<br />
+                            With three decades of research expertise in the
+                            field,
+                            <br />
+                            roboticist Ken Goldberg sheds light on the clumsy
+                            truth about robots — <br />
+                            and what it will take to build more dexterous
+                            machines to work in a warehouse or help out at home.
+                          </div>
+                          <div class="tj-main-whats-on-swiper__button">
+                            <button
+                              type="button"
+                              class="btn btn-outline-light btn-plus-white"
+                            >
+                              <p><strong>SEE MORE</strong></p>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-whats-on-swiper__slide">
+                          <div class="tj-main-whats-on-swiper__bg">
+                            <img src="https://picsum.photos/972/550" alt="" />
+                          </div>
+                          <div class="tj-main-whats-on-swiper__title">
+                            Why don't we have <br />
+                            better robots yet?
+                          </div>
+                          <div class="tj-main-whats-on-swiper__text">
+                            Why hasn't the dream of having a robot at home to do
+                            your chores become a reality yet?<br />
+                            With three decades of research expertise in the
+                            field,
+                            <br />
+                            roboticist Ken Goldberg sheds light on the clumsy
+                            truth about robots — <br />
+                            and what it will take to build more dexterous
+                            machines to work in a warehouse or help out at home.
+                          </div>
+                          <div class="tj-main-whats-on-swiper__button">
+                            <button
+                              type="button"
+                              class="btn btn-outline-light btn-plus-white"
+                            >
+                              <p><strong>SEE MORE</strong></p>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <script>
+                  var swiper03 = new Swiper(
+                    '.tj-main-whats-on-swiper .swiper',
+                    {
+                      loop: true,
+                      centeredSlides: true,
+                      slidesPerView: 3,
+                      spaceBetween: 24,
+                      autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      },
+                      pagination: {
+                        el: '.tj-main-whats-on-swiper .swiper-pagination',
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                          return (
+                            '<span class="' +
+                            className +
+                            '">' +
+                            0 +
+                            (index + 1) +
+                            '</span>'
+                          );
+                        },
+                      },
+                    }
+                  );
+                </script>
+              </div>
+            </div>
+
+            <div class="tj-main-hot-thoughts">
+              <a href="" class="tj-main-hot-thoughts-day">
+                <div class="tj-main-hot-thoughts-day__bg">
+                  <img src="https://picsum.photos/972/550" alt="" />
+                </div>
+                <h3>Thoughts of the Day</h3>
+                <div class="tj-main-hot-thoughts-day__title">
+                  “As AI becomes more sophisticated, we need to strengthen
+                  humanities education that can ask sharp questions about AI.”
+                  (Stephen Koslin, Professor Emeritus at Harvard University) The
+                  emergence of generative artificial intelligence (AI), which
+                  asks and answers like a human, is shaking up not only the
+                  industry but also the educational field. “As AI becomes more
+                  sophisticated, we need to strengthen humanities education that
+                  can ask sharp questions about AI.” (Stephen Koslin, Professor
+                  Emeritus at Harvard University) The emergence of generative
+                  artificial intelligence (AI), which asks and answers like a
+                  human, is shaking up not only the industry but also the
+                  educational field.
+                </div>
+                <div class="tj-main-hot-thoughts-day__text">
+                  “As AI becomes more sophisticated, we need to strengthen
+                  humanities education that can ask sharp questions about AI.”
+                  (Stephen Koslin, Professor Emeritus at Harvard University) The
+                  emergence of generative artificial intelligence (AI), which
+                  asks and answers like a human, is shaking up not only the
+                  industry but also the educational field. “As AI becomes more
+                  sophisticated, we need to strengthen humanities education that
+                  can ask sharp questions about AI.” (Stephen Koslin, Professor
+                  Emeritus at Harvard University) The emergence of generative
+                  artificial intelligence (AI), which asks and answers like a
+                  human, is shaking up not only the industry but also the
+                  educational field.
+                </div>
+                <div class="tj-main-hot-thoughts-day__info">
+                  <strong>Sangwook Kim</strong>
+                  <p>2024.03.15</p>
+                </div>
+              </a>
+              <div class="tj-main-hot-thoughts-hot">
+                <div class="tj-main-hot-thoughts-head">
+                  <h3>Check this hot Thoughts</h3>
+                  <a href="">See More</a>
+                </div>
+                <div class="tj-main-hot-thoughts-swiper">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="tj-main-hot-thoughts-swiper-item">
+                          <div class="tj-main-hot-thoughts-swiper__title">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__text">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__info">
+                            <strong>Sangwook Kim</strong>
+                            <p>2024.03.15</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-hot-thoughts-swiper-item">
+                          <div class="tj-main-hot-thoughts-swiper__title">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__text">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__info">
+                            <strong>Sangwook Kim</strong>
+                            <p>2024.03.15</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-hot-thoughts-swiper-item">
+                          <div class="tj-main-hot-thoughts-swiper__title">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__text">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__info">
+                            <strong>Sangwook Kim</strong>
+                            <p>2024.03.15</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-hot-thoughts-swiper-item">
+                          <div class="tj-main-hot-thoughts-swiper__title">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__text">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__info">
+                            <strong>Sangwook Kim</strong>
+                            <p>2024.03.15</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="tj-main-hot-thoughts-swiper-item">
+                          <div class="tj-main-hot-thoughts-swiper__title">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__text">
+                            인공지능의 도전과 기후 재앙의 경고 와중에 우리 삶을
+                            떠받치고 있는 자유주의, 민주주의, 자본주의 체제와
+                            가치들이 위협받고 있는 상황에서 다음 단계 시대가치는
+                            무엇이어야 하는가를 문명사적으로 검토해 보았다. 다음
+                            단계 시대가치는 개인과 공동체가 현재 겪고 있는
+                            문제와 모순을 극복하면서 미래가 나아갈 방향을
+                            처방하는 것이기에 현대를 정확히 진단하는 것이
+                            무엇보다 중요하다.
+                          </div>
+                          <div class="tj-main-hot-thoughts-swiper__info">
+                            <strong>Sangwook Kim</strong>
+                            <p>2024.03.15</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    var swiper04 = new Swiper(
+                      '.tj-main-hot-thoughts-swiper .swiper',
+                      {
+                        loop: true,
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                        autoplay: {
+                          delay: 2500,
+                          disableOnInteraction: false,
+                        },
+                      }
+                    );
+                  </script>
+                </div>
+              </div>
+            </div>
+            <div class="tj-main-hot-thoughts__link">
+              <button data-bs-toggle="modal" data-bs-target="#modalWrite">
+                <strong>Any thoughts?</strong>
+                <span>Write Now!</span>
+              </button>
+            </div>
+
+            <div class="tj-main-banner">
+              <div class="tj-main-banner-swiper">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="tj-main-banner-swiper-item">
+                        <div class="tj-main-banner-swiper__bg">
+                          <img src="https://picsum.photos/972/550" alt="" />
+                        </div>
+                        <div class="tj-main-banner-swiper__title">
+                          Next Answer Thinks about<br />
+                          the Global Future
+                        </div>
+                        <div class="tj-main-banner-swiper__text">
+                          A Round for global discussion the leads to change in
+                          the world.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="tj-main-banner-swiper-item">
+                        <div class="tj-main-banner-swiper__bg">
+                          <img src="https://picsum.photos/972/550" alt="" />
+                        </div>
+                        <div class="tj-main-banner-swiper__title">
+                          Next Answer Thinks about<br />
+                          the Global Future
+                        </div>
+                        <div class="tj-main-banner-swiper__text">
+                          A Round for global discussion the leads to change in
+                          the world.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="tj-main-banner-swiper-item">
+                        <div class="tj-main-banner-swiper__bg">
+                          <img src="https://picsum.photos/972/550" alt="" />
+                        </div>
+                        <div class="tj-main-banner-swiper__title">
+                          Next Answer Thinks about<br />
+                          the Global Future
+                        </div>
+                        <div class="tj-main-banner-swiper__text">
+                          A Round for global discussion the leads to change in
+                          the world.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="tj-main-banner-swiper-item">
+                        <div class="tj-main-banner-swiper__bg">
+                          <img src="https://picsum.photos/972/550" alt="" />
+                        </div>
+                        <div class="tj-main-banner-swiper__title">
+                          Next Answer Thinks about<br />
+                          the Global Future
+                        </div>
+                        <div class="tj-main-banner-swiper__text">
+                          A Round for global discussion the leads to change in
+                          the world.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="tj-main-banner-swiper-item">
+                        <div class="tj-main-banner-swiper__bg">
+                          <img src="https://picsum.photos/972/550" alt="" />
+                        </div>
+                        <div class="tj-main-banner-swiper__title">
+                          Next Answer Thinks about<br />
+                          the Global Future
+                        </div>
+                        <div class="tj-main-banner-swiper__text">
+                          A Round for global discussion the leads to change in
+                          the world.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <script>
+                  var swiper05 = new Swiper('.tj-main-banner-swiper .swiper', {
+                    loop: true,
+                    effect: 'fade',
+                    autoplay: {
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    },
+                    pagination: {
+                      el: '.tj-main-banner-swiper .swiper-pagination',
+                      clickable: true,
+                      renderBullet: function (index, className) {
+                        return (
+                          '<span class="' +
+                          className +
+                          '">' +
+                          0 +
+                          (index + 1) +
+                          '</span>'
+                        );
+                      },
+                    },
+                  });
+                </script>
+              </div>
+            </div>
+
+            <div class="tj-main-community">
+              <div class="tj-main-community-head">
+                <h2>Community</h2>
+                <a href="">See More</a>
+              </div>
+              <div class="tj-main-community-board">
+                <dl>
+                  <dt>BEST</dt>
+                  <dd>
+                    <ol>
+                      <li>
+                        <a href="">
+                          <p>
+                            <span>1</span>
+                            lMusic, movement and poetry
+                          </p>
+                          <strong>5,123,456</strong>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <p>
+                            <span>2</span>
+                            lA futuristic vision for Latin America, rooted in
+                            ancient design
+                          </p>
+                          <strong>132,345</strong>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <p>
+                            <span>3</span>
+                            lHow to spot a cult
+                          </p>
+                          <strong>15,678</strong>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <p>
+                            <span>4</span>
+                            lWant to succeed in business? Find a problem to
+                            solve
+                          </p>
+                          <strong>4,321</strong>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <p>
+                            <span>5</span>
+                            Why don't we have better robots yet?
+                          </p>
+                          <strong>1,234</strong>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="">
+                          <p>
+                            <span>6</span>
+                            lThe human cost of coal mining in China
+                          </p>
+                          <strong>1,786</strong>
+                        </a>
+                      </li>
+                    </ol>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>NEW</dt>
+                  <dd>
+                    <ul>
+                      <li>
+                        <a href=""
+                          ><p>lThe human cost of coal mining in China</p></a
+                        >
+                      </li>
+                      <li>
+                        <a href=""
+                          ><p>lHow to live with economic doomsaying</p></a
+                        >
+                      </li>
+                      <li>
+                        <a href=""
+                          ><p>
+                            lYour invitation to help build a sustainable future
+                          </p></a
+                        >
+                      </li>
+                      <li>
+                        <a href=""><p>Let your garden grow wild</p></a>
+                      </li>
+                      <li>
+                        <a href=""
+                          ><p>lWhy don't we have better robots yet?</p></a
+                        >
+                      </li>
+                      <li>
+                        <a href=""
+                          ><p>
+                            l3 steps to better connect with your fellow humans
+                          </p></a
+                        >
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          $(document).ready(function () {
+            $('#modalDetail').on('show.bs.modal', function (e) {
+              $('.modal-body #modalDetail').load(
+                '../components/desktop/modalDetail.html'
+              );
+              $('.modal-body #comments').load(
+                '../components/desktop/comments.html'
+              );
+            });
+            $('#modalWrite').on('show.bs.modal', function (e) {
+              $('#modalWriteContents').load(
+                '../components/desktop/modalWrite.html'
+              );
+            });
+            $('#modalReport').on('show.bs.modal', function (e) {
+              $('#modalReportContents').load(
+                '../components/desktop/modalReport.html'
+              );
+            });
+          });
+        </script>
+
+        <!-- Modal -->
+        <div class="modal modal-lg fade" id="modalDetail" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered tj-modal-detail">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div id="modalDetail"></div>
+                <div id="comments"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal modal-lg fade" id="modalWrite" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered tj-modal-write">
+            <div class="modal-content">
+              <div id="modalWriteContents"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalReport" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered tj-modal-write">
+            <div class="modal-content">
+              <div id="modalReportContents"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>

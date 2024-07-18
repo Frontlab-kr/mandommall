@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+    />
+    <!-- js -->
+    <script src="../assets/js/mobile/common.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="../assets/scss/mobile/common.css" />
+  </head>
+  <body>
+    <div class="mandom mandom-gatsby">
+      <div id="header"></div>
+      <div id="menu"></div>
+      <div class="mandom-body">
+        <div class="mandom-main">
+          <div class="mandom-main-kv">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/200/300" alt="" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-pause"></div>
+              <div class="swiper-button-play" style="display: none"></div>
+            </div>
+            <script>
+              $(document).ready(function () {
+                var swiper01 = new Swiper('.mandom-main-kv .swiper', {
+                  autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  },
+                  loop: true,
+                  pagination: {
+                    el: '.mandom-main-kv .swiper-pagination',
+                    type: 'fraction',
+                  },
+                });
+                $('.swiper-button-pause').click(function () {
+                  $('.swiper-button-pause').hide();
+                  $('.swiper-button-play').show();
+                  swiper01.autoplay.stop();
+                });
+                $('.swiper-button-play').click(function () {
+                  $('.swiper-button-play').hide();
+                  $('.swiper-button-pause').show();
+                  swiper01.autoplay.start();
+                });
+              });
+            </script>
+          </div>
+          <div class="mandom-main-menu">
+            <a href="">
+              <span>
+                <img
+                  src="../assets/images/mobile/gatsby/main-menu-event.svg"
+                  alt=""
+                />
+              </span>
+              <p>이벤트</p>
+            </a>
+            <a href="">
+              <span>
+                <img
+                  src="../assets/images/mobile/gatsby/main-menu-sale.svg"
+                  alt=""
+                />
+              </span>
+              <p>기획전</p>
+            </a>
+            <a href="">
+              <span>
+                <img
+                  src="../assets/images/mobile/gatsby/main-menu-benefit.svg"
+                  alt=""
+                />
+              </span>
+              <p>구매혜택</p>
+            </a>
+            <a href="">
+              <span>
+                <img
+                  src="../assets/images/mobile/gatsby/main-menu-outlet.svg"
+                  alt=""
+                />
+              </span>
+              <p>아울렛</p>
+            </a>
+          </div>
+          <div class="mandom-main-slide">
+            <div class="mandom-main-slide__title">
+              탈모와 컬 스타일링을 동시에
+            </div>
+            <div class="mandom-main-slide-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              <script>
+                $(document).ready(function () {
+                  $('.mandom-main-slide-swiper .swiper-slide').load(
+                    '../components/mobile/product.html',
+                    function () {
+                      // load가 완료된 후 실행할 코드
+                      var $html = $('.mandom-main-slide-swiper .swiper-slide')
+                        .first()
+                        .clone();
+                      var $row = $(
+                        '.mandom-main-slide-swiper  .swiper-wrapper'
+                      );
+                      for (var i = 1; i < 6; i++) {
+                        $row.append($html.clone());
+                      }
+                    }
+                  );
+                  setTimeout(() => {
+                    var swiper02 = new Swiper('.mandom-main-slide .swiper', {
+                      loop: true,
+                      slidesPerView: 'auto',
+                      centeredSlides: true,
+                      spaceBetween: 10,
+                      pagination: {
+                        el: '.mandom-main-slide .swiper-pagination',
+                      },
+                    });
+                  }, 1000);
+                });
+              </script>
+            </div>
+          </div>
+          <div class="mandom-main-recommend">
+            <div class="mandom-main-recommend__title">
+              차은우 고객님께<br />
+              지금 필요한 상품입니다
+            </div>
+            <div class="mandom-main-recommend-list">
+              <div class="mandom-main-recommend-list-item"></div>
+            </div>
+            <script>
+              $(document).ready(function () {
+                $('.mandom-main-recommend-list-item').load(
+                  '../components/mobile/product.html',
+                  function () {
+                    // load가 완료된 후 실행할 코드
+                    var $html = $('.mandom-main-recommend-list-item')
+                      .first()
+                      .clone();
+                    var $row = $('.mandom-main-recommend-list');
+                    for (var i = 1; i < 3; i++) {
+                      $row.append($html.clone());
+                    }
+                  }
+                );
+              });
+            </script>
+          </div>
+          <div class="mandom-main-image">
+            <img src="https://picsum.photos/700/700" alt="" />
+          </div>
+          <div class="mandom-main-product">
+            <div class="mandom-main-product-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"></div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <script>
+                $(document).ready(function () {
+                  $('.mandom-main-product-swiper .swiper-slide').load(
+                    '../components/mobile/product.html',
+                    function () {
+                      // load가 완료된 후 실행할 코드
+                      var $html = $('.mandom-main-product-swiper .swiper-slide')
+                        .first()
+                        .clone();
+                      var $row = $(
+                        '.mandom-main-product-swiper  .swiper-wrapper'
+                      );
+                      for (var i = 1; i < 12; i++) {
+                        $row.append($html.clone());
+                      }
+                    }
+                  );
+                  setTimeout(() => {
+                    var swiper03 = new Swiper('.mandom-main-product .swiper', {
+                      slidesPerView: 2,
+                      grid: {
+                        rows: 2,
+                      },
+                      spaceBetween: 10,
+                      pagination: {
+                        el: '.mandom-main-product .swiper-pagination',
+                      },
+                    });
+                  }, 1000);
+                });
+              </script>
+            </div>
+          </div>
+          <div class="mandom-main-tips">
+            <div class="mandom-main-tips__title">GATSBY Styling Tips</div>
+            <div class="mandom-main-tips__iframe">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/aGVMT_Po_ug?si=jQG3BrqL825HL6WP"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="mandom-main-tips-list">
+              <div class="mandom-main-tips-list-item"></div>
+            </div>
+            <script>
+              $(document).ready(function () {
+                $('.mandom-main-tips-list-item').load(
+                  '../components/mobile/product.html',
+                  function () {
+                    // load가 완료된 후 실행할 코드
+                    var $html = $('.mandom-main-tips-list-item')
+                      .first()
+                      .clone();
+                    var $row = $('.mandom-main-tips-list');
+                    for (var i = 1; i < 2; i++) {
+                      $row.append($html.clone());
+                    }
+                  }
+                );
+              });
+            </script>
+          </div>
+          <div class="mandom-main-banner">
+            <a href=""><img src="https://picsum.photos/335/100" alt="" /></a>
+          </div>
+          <div class="mandom-main-product02">
+            <div class="mandom-main-product02__title">새봄 맞이 관리 해봄</div>
+            <div class="mandom-main-product02-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"></div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <script>
+                $(document).ready(function () {
+                  $('.mandom-main-product02-swiper .swiper-slide').load(
+                    '../components/mobile/product.html',
+                    function () {
+                      // load가 완료된 후 실행할 코드
+                      var $html = $(
+                        '.mandom-main-product02-swiper .swiper-slide'
+                      )
+                        .first()
+                        .clone();
+                      var $row = $(
+                        '.mandom-main-product02-swiper  .swiper-wrapper'
+                      );
+                      for (var i = 1; i < 12; i++) {
+                        $row.append($html.clone());
+                      }
+                    }
+                  );
+                  setTimeout(() => {
+                    var swiper04 = new Swiper(
+                      '.mandom-main-product02 .swiper',
+                      {
+                        slidesPerView: 2,
+                        grid: {
+                          rows: 2,
+                        },
+                        spaceBetween: 10,
+                        pagination: {
+                          el: '.mandom-main-product02 .swiper-pagination',
+                        },
+                      }
+                    );
+                  }, 1000);
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>

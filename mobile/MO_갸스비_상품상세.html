@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+    />
+    <!-- js -->
+    <script src="../assets/js/mobile/common.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="../assets/scss/mobile/common.css" />
+  </head>
+  <body>
+    <div class="mandom mandom-gatsby">
+      <div id="header"></div>
+      <div id="menu"></div>
+      <div class="mandom-body">
+        <div class="mandom-category">
+          <div class="mandom-category-menu mandom-category-menu--black">
+            <a href="" class="active">헤어왁스</a>
+            <a href="">헤어스프레이</a>
+            <a href="">헤어젤/헤어폼</a>
+            <a href="">헤어케어</a>
+            <a href="">헤어스프레이</a>
+            <a href="">헤어왁스</a>
+            <a href="">헤어스프레이</a>
+            <a href="">헤어젤/헤어폼</a>
+            <a href="">헤어케어</a>
+            <a href="">헤어스프레이</a>
+          </div>
+        </div>
+        <div class="mandom-detail">
+          <div class="mandom-detail-thumb">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/700/700" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/700/700" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/700/700" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/700/700" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://picsum.photos/700/700" alt="" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <script>
+              var swiper01 = new Swiper('.mandom-detail-thumb .swiper', {
+                loop: true,
+                pagination: {
+                  el: '.mandom-detail-thumb .swiper-pagination',
+                },
+              });
+            </script>
+          </div>
+          <div class="mandom-detail-info">
+            <div class="mandom-detail-info-head">
+              <div class="mandom-detail-info-badge">
+                <span
+                  class="badge"
+                  style="background-color: #f0f1f4; color: #3083ff"
+                  >NEW</span
+                >
+                <span
+                  class="badge"
+                  style="background-color: #f0f1f4; color: #ff5261"
+                  >SALE</span
+                >
+                <span
+                  class="badge"
+                  style="background-color: #f0f1f4; color: #777777"
+                  >BEST</span
+                >
+                <span
+                  class="badge"
+                  style="background-color: #00909a; color: #ffffff"
+                  >ONLINE ONLY</span
+                >
+                <span
+                  class="badge"
+                  style="background-color: #ff5261; color: #ffffff"
+                  >COUPON</span
+                >
+              </div>
+              <div class="mandom-detail-info-button">
+                <button class="mandom-detail-info-button__heart active">
+                  좋아요
+                </button>
+                <button class="mandom-detail-info-button__share">공유</button>
+              </div>
+            </div>
+
+            <div class="mandom-detail-info-text">
+              탈모 완화와 컬 스타일링을 동시에
+            </div>
+            <div class="mandom-detail-info-title">
+              갸스비 헤어 앤 스칼프 트레이닝 토닉 컬 타입
+            </div>
+            <div class="mandom-detail-info-price">
+              <del>19,000원</del>
+              <div class="mandom-detail-info-price-current">
+                <span class="text-danger">20%</span>
+                15,200원
+              </div>
+            </div>
+            <div class="mandom-detail-info-foot">
+              <div class="mandom-detail-info-review">
+                <div class="mandom-score">
+                  <div class="mandom-score__star mandom-score__star--5">
+                    <span>1점</span>
+                    <span>2점</span>
+                    <span>3점</span>
+                    <span>4점</span>
+                    <span>5점</span>
+                  </div>
+                  <div class="mandom-score__text">4.9</div>
+                </div>
+                <strong class="text-success ms-2"> 후기 87개 </strong>
+              </div>
+              <div class="mandom-detail-info-view">
+                <strong>105명</strong>이 보고 있어요
+              </div>
+            </div>
+            <div class="mandom-detail-info-tag">
+              <button
+                type="button"
+                class="btn btn-sm rounded-pill btn-outline-secondary rounded-pill"
+              >
+                #탈모 완화
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm rounded-pill btn-outline-secondary rounded-pill"
+              >
+                #컬 스타일링
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm rounded-pill btn-outline-secondary rounded-pill"
+              >
+                #힘없는 모발
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm rounded-pill btn-outline-secondary rounded-pill"
+              >
+                #촉촉해지는 모발
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm rounded-pill btn-outline-secondary rounded-pill"
+              >
+                #건강해지는 두피
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm rounded-pill btn-outline-secondary rounded-pill"
+              >
+                #쉬워지는 스타일링
+              </button>
+            </div>
+          </div>
+          <div class="mandom-detail-pay">
+            <button class="mandom-detail-pay__npay">네이버페이</button>
+            <button class="mandom-detail-pay__cart">장바구니</button>
+            <button class="mandom-detail-pay__buy">바로구매</button>
+          </div>
+          <div class="mandom-detail-contents">
+            <ul class="nav" role="tablist">
+              <li role="presentation">
+                <button
+                  class="active"
+                  data-bs-toggle="tab"
+                  data-bs-target="#tab01"
+                  type="button"
+                  role="tab"
+                >
+                  상품설명
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  data-bs-toggle="tab"
+                  data-bs-target="#tab02"
+                  type="button"
+                  role="tab"
+                >
+                  리뷰
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  data-bs-toggle="tab"
+                  data-bs-target="#tab03"
+                  type="button"
+                  role="tab"
+                >
+                  배송/교환/반품
+                </button>
+              </li>
+              <li role="presentation">
+                <button
+                  data-bs-toggle="tab"
+                  data-bs-target="#tab04"
+                  type="button"
+                  role="tab"
+                >
+                  상품정보고시
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div
+                class="tab-pane fade show active"
+                id="tab01"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+                tabindex="0"
+              >
+                상품설명
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab02"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+                tabindex="0"
+              >
+                리뷰
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab03"
+                role="tabpanel"
+                aria-labelledby="contact-tab"
+                tabindex="0"
+              >
+                배송/교환/반품
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab04"
+                role="tabpanel"
+                tabindex="0"
+              >
+                상품정보고시
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>
