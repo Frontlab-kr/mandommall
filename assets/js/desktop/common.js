@@ -12,12 +12,12 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  $('#header').load('../components/mobile/header.html');
-  $('#footer').load('../components/mobile/footer.html');
-  $('#menu').load('../components/mobile/menu.html');
+  $('#header').load('../components/desktop/header.html');
+  $('#footer').load('../components/desktop/footer.html');
+  $('#menu').load('../components/desktop/menu.html');
 });
 
-var stateMenu = true;
+var stateMenu = false;
 function menuOpen() {
   stateMenu = true;
   $('.mandom').addClass('stateMenu');
@@ -26,6 +26,3 @@ function menuClose() {
   stateMenu = true;
   $('.mandom').removeClass('stateMenu');
 }
-$(document).ready(function () {
-  //
-});
