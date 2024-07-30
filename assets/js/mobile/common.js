@@ -12,9 +12,9 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  $('#header').load('../components/mobile/header.html');
-  $('#footer').load('../components/mobile/footer.html');
-  $('#menu').load('../components/mobile/menu.html');
+  $('#mandom-header').load('../components/mobile/header.html');
+  $('#mandom-footer').load('../components/mobile/footer.html');
+  $('#mandom-menu').load('../components/mobile/menu.html');
 });
 
 var stateMenu = true;
