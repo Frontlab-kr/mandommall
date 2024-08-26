@@ -1042,6 +1042,10 @@
           }
         }
       }
+      .swiper {
+        position: relative;
+        z-index: 20;
+      }
     }
     &-banner {
       margin: 0 20px;

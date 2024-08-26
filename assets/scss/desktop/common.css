@@ -12057,10 +12057,30 @@ a {
   padding: 0 5px;
   background-color: #fff;
 }
+.mandom-header .gatsby-header-gnb__search {
+  right: 0;
+  height: 80px;
+  z-index: 10;
+}
+.mandom-header .gatsby-header-gnb__search .search_keywords {
+  top: 80px !important;
+  width: 530px;
+  z-index: 50;
+}
+.mandom-header .gatsby-header-gnb__search > form > button {
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  background: url(../../images/desktop/header-search-active.svg) no-repeat 50% 50%;
+}
+.mandom-header .gatsby-header-gnb__search .search_keywords .keyword_inner {
+  padding: 44px 0 44px 40px;
+}
 .mandom-header .mandom-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 }
 .mandom-header__start {
   display: flex;
@@ -12100,6 +12120,9 @@ a {
   height: 30px;
   background: url(../../images/desktop/header-cart.svg) no-repeat 50% 50%;
 }
+.mandom-header-cart:hover {
+  background: url(../../images/desktop/header-cart-hover.svg) no-repeat 50% 50%;
+}
 .mandom-header-cart strong {
   position: absolute;
   top: 0px;
@@ -12128,6 +12151,9 @@ a {
   background: url(../../images/desktop/header-lock.svg) no-repeat 50% 50%;
   font-size: 0;
 }
+.mandom-header-lock:hover {
+  background: url(../../images/desktop/header-lock-hover.svg) no-repeat 50% 50%;
+}
 .mandom-header-mypage {
   position: relative;
   display: block;
@@ -12136,6 +12162,9 @@ a {
   background: url(../../images/desktop/header-mypage.svg) no-repeat 50% 50%;
   font-size: 0;
 }
+.mandom-header-mypage:hover {
+  background: url(../../images/desktop/header-mypage-hover.svg) no-repeat 50% 50%;
+}
 .mandom-header-search {
   position: relative;
   display: block;
@@ -12143,6 +12172,9 @@ a {
   height: 30px;
   background: url(../../images/desktop/header-search.svg) no-repeat 50% 50%;
   font-size: 0;
+}
+.mandom-header-search:hover {
+  background: url(../../images/desktop/header-search-hover.svg) no-repeat 50% 50%;
 }
 .mandom-layer-menu {
   height: 47px;

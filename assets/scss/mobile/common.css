@@ -12957,6 +12957,10 @@ a {
 .mandom-main-tips-list-item .mandom-product-badge {
   margin-top: 4px;
 }
+.mandom-main-tips .swiper {
+  position: relative;
+  z-index: 20;
+}
 .mandom-main-banner {
   margin: 0 20px;
 }

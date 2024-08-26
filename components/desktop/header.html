@@ -10,7 +10,208 @@
       <a href="" class="mandom-header-cart">
         <strong>2</strong>
       </a>
-      <a href="" class="mandom-header-search"> 검색 </a>
+      <a
+        href=""
+        class="mandom-header-search gatsby-header-gnb__util-item-search"
+      >
+        검색
+      </a>
+    </div>
+
+    <script>
+      $('.gatsby-header-gnb__menu-btn').on('click', function () {
+        $('.gatsby-header-gnb__menu').toggleClass('active');
+      });
+      $('.gatsby-header-gnb__util-item-search').on('click', function () {
+        $('.gatsby-header-gnb__search').show();
+        $('.gatsby-header-gnb__search input').focus();
+        $('.gatsby-header-gnb__search').addClass('active');
+        return false;
+      });
+      $('html').on('click', function (e) {
+        if (
+          $(e.target).hasClass('gatsby-header-gnb__search') ||
+          $(e.target).parents().hasClass('gatsby-header-gnb__search')
+        ) {
+        } else {
+          $('.gatsby-header-gnb__search').hide();
+          $('.gatsby-header-gnb__search input').val('');
+          $('.gatsby-header-gnb__search').removeClass('active');
+        }
+        if (
+          $(e.target).hasClass('gatsby-header-gnb__menu') ||
+          $(e.target).parents().hasClass('gatsby-header-gnb__menu')
+        ) {
+        } else {
+          $('.gatsby-header-gnb__menu').removeClass('active');
+        }
+      });
+      // 240313 LJH : 검색 자동완성 제거 [ 이경선 ]
+      /* $(document).keyup(function (e) {
+      if (e.keyCode === 27) {
+        $(".gatsby-header-gnb__search").hide();
+        $(".gatsby-header-gnb__search input").val("");
+      }
+    }); */
+
+      $(document).ready(function () {
+        recentSearchCall();
+      });
+
+      // 최근 검색어 목록
+      function recentSearchCall() {
+        var searchItem = JSON.parse(localStorage.getItem('searchItem')); // 로컬스토리지 값
+        var html = '';
+        if (searchItem != null) {
+          var totCnt = searchItem.length;
+
+          if (totCnt == 0) {
+            html = '<li>';
+            html +=
+              "	<a href='javascript:void(0)'><span>최근 검색어가 존재 하지 않습니다.</span></a>";
+            html += '</li>';
+          } else {
+            for (var i = 0; i < searchItem.length; i++) {
+              //var keyword = XSSfilter(searchItem[i].keyword);
+              var keyword = searchItem[i].keyword;
+              var date = searchItem[i].date;
+              html += "<li data-keyword-date='" + date + "'>";
+              html +=
+                "	<a href='javascript:void(0)' onclick=\"goTopSearch('" +
+                keyword +
+                '\')" ><span>' +
+                keyword +
+                '</span></a> ';
+              html += '</li>';
+            }
+          }
+        } else {
+          html = '<li>';
+          html +=
+            "	<a href='javascript:void(0)'><span>최근 검색어가 존재 하지 않습니다.</span></a>";
+          html += '</li>';
+        }
+        $('#recentSearchList').html(html); // 리스트
+      }
+
+      // 최근 검색어 목록  삭제
+      function recentSearchClear() {
+        localStorage.removeItem('searchItem');
+        recentSearchCall();
+      }
+
+      function topsearch() {
+        if ($.trim($('#top_search_keyword').val()) == '') {
+          alert('검색어를 입력해주세요.');
+          return false;
+        } else {
+          XSSfilter($('#top_search_keyword').val());
+          searchItemSave($.trim($('#top_search_keyword').val()));
+          return true;
+        }
+      }
+
+      //최근검색어 저장
+      function searchItemSave(keyword) {
+        XSSfilter(keyword);
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        if (mm < 10) {
+          mm = '0' + mm;
+        }
+        if (dd < 10) {
+          dd = '0' + dd;
+        }
+
+        var curr = mm + '.' + dd;
+        var array = new Array();
+        var obj = new Object();
+        obj.keyword = keyword;
+        obj.date = curr;
+
+        //최근검색어
+        var searchItem = JSON.parse(localStorage.getItem('searchItem'));
+
+        if (searchItem != null) {
+          for (var i = 0; i < searchItem.length; i++) {
+            if (keyword != searchItem[i].keyword) {
+              var itemObj = new Object();
+              itemObj.keyword = searchItem[i].keyword;
+              itemObj.date = searchItem[i].date;
+              array.push(itemObj);
+            }
+          }
+
+          array.unshift(obj);
+
+          if (searchItem.length > 9) {
+            // 10개 제한
+            array.pop();
+          }
+        } else {
+          array.push(obj);
+        }
+        localStorage.setItem('searchItem', JSON.stringify(array));
+      }
+
+      function goTopSearch(keyword) {
+        XSSfilter(keyword);
+        $('#top_search_keyword').val($.trim(keyword));
+        $('#topSearchFrm').submit();
+      }
+
+      var path = window.location.pathname;
+      var pagename = path.split('/').pop();
+      //결제 결과 페이지는 검색창을 보이게 한다.
+      if (pagename == 'searchResult.do') {
+        $('#search').addClass('active');
+      }
+    </script>
+
+    <script>
+      $('.search_close').bind('click', function () {
+        $('.gatsby-header-gnb__search').removeClass('active searching');
+      });
+    </script>
+
+    <div id="search" class="gatsby-header-gnb__search">
+      <form
+        action="/w/etc/searchResult.do"
+        id="topSearchFrm"
+        method="post"
+        onsubmit="return topsearch();"
+      >
+        <input
+          type="text"
+          class="keyword"
+          placeholder="검색어를 입력하세요"
+          name="keyword"
+          id="top_search_keyword"
+          value=""
+        />
+        <button type="submit" class="btn-srch">
+          <span class="sr-only">검색</span>
+        </button>
+      </form>
+
+      <div class="search_keywords clearfix">
+        <div class="keyword_inner">
+          <div class="search_recent">
+            <strong class="keyword_title">최근 검색어</strong>
+            <ol id="recentSearchList"></ol>
+            <button
+              type="button"
+              class="keyword_delete"
+              onclick="recentSearchClear();"
+            >
+              검색기록삭제
+            </button>
+          </div>
+        </div>
+        <button type="button" class="search_close">창닫기</button>
+      </div>
     </div>
   </div>
 </header>
