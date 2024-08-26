@@ -46,12 +46,6 @@
 
         &-slide {
           &-swiper {
-            background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
-            &::after {
-              background: url(../../images/mobile/bifesta/main-slide-bg.png)
-                no-repeat 50% 100%;
-              background-size: 371px 147px;
-            }
             .swiper {
               &-pagination {
                 &-bullet {
@@ -59,6 +53,18 @@
                     background: #a67e14;
                   }
                 }
+              }
+            }
+          }
+          &--bg {
+            background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
+          }
+          &--bg & {
+            &-swiper {
+              &::after {
+                background: url(../../images/mobile/bifesta/main-slide-bg.png)
+                  no-repeat 50% 100%;
+                background-size: 371px 147px;
               }
             }
           }
@@ -803,7 +809,6 @@
 
     &-slide {
       padding: 100px 0 60px 0;
-      background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
       &__title {
         margin-bottom: 50px;
         color: #000;
@@ -818,18 +823,7 @@
         display: flex;
         margin: 0 -10px;
         padding: 0 10px;
-        &:after {
-          content: '';
-          display: block;
-          position: absolute;
-          right: -280px;
-          bottom: -60px;
-          width: 865px;
-          height: 339px;
-          background: url(../../images/desktop/gatsby/main-slide-bg.svg)
-            no-repeat 50% 100%;
-          background-size: 865px 339px;
-        }
+
         .swiper {
           width: calc(100% + 20px);
           margin: 0 -10px;
@@ -858,6 +852,25 @@
         .mandom-product {
           &-info {
             padding: 30px 20px;
+          }
+        }
+      }
+      &--bg {
+        background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
+      }
+      &--bg & {
+        &-swiper {
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: -280px;
+            bottom: -60px;
+            width: 865px;
+            height: 339px;
+            background: url(../../images/desktop/gatsby/main-slide-bg.svg)
+              no-repeat 50% 100%;
+            background-size: 865px 339px;
           }
         }
       }

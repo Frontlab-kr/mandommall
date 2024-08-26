@@ -12024,15 +12024,15 @@ a {
   background: #fff7e0;
   border-color: #fff7e0;
 }
-.mandom-bifesta .mandom-main-slide-swiper {
-  background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
-}
-.mandom-bifesta .mandom-main-slide-swiper::after {
-  background: url(../../images/mobile/bifesta/main-slide-bg.png) no-repeat 50% 100%;
-  background-size: 371px 147px;
-}
 .mandom-bifesta .mandom-main-slide-swiper .swiper-pagination-bullet-active {
   background: #a67e14;
+}
+.mandom-bifesta .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
+}
+.mandom-bifesta .mandom-main-slide--bg .mandom-bifesta .mandom-main-slide-swiper::after {
+  background: url(../../images/mobile/bifesta/main-slide-bg.png) no-repeat 50% 100%;
+  background-size: 371px 147px;
 }
 .mandom-bifesta .mandom-main-tips::before {
   background: #ffeab1 url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50% 50%;
@@ -12726,18 +12726,6 @@ a {
 }
 .mandom-main-slide-swiper {
   position: relative;
-  background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
-}
-.mandom-main-slide-swiper::after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 147px;
-  background: url(../../images/mobile/gatsby/main-slide-bg.png) no-repeat 50% 100%;
-  background-size: 371px 147px;
 }
 .mandom-main-slide-swiper .swiper-wrapper {
   padding-bottom: 86px;
@@ -12772,6 +12760,20 @@ a {
 }
 .mandom-main-slide-swiper .swiper-pagination-bullet-active {
   background: #00909a;
+}
+.mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
+}
+.mandom-main-slide--bg .mandom-main-slide-swiper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 147px;
+  background: url(../../images/mobile/gatsby/main-slide-bg.png) no-repeat 50% 100%;
+  background-size: 371px 147px;
 }
 .mandom-main-recommend {
   padding: 50px 20px;

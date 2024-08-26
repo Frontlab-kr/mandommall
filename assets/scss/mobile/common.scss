@@ -46,12 +46,6 @@
 
         &-slide {
           &-swiper {
-            background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
-            &::after {
-              background: url(../../images/mobile/bifesta/main-slide-bg.png)
-                no-repeat 50% 100%;
-              background-size: 371px 147px;
-            }
             .swiper {
               &-pagination {
                 &-bullet {
@@ -59,6 +53,18 @@
                     background: #a67e14;
                   }
                 }
+              }
+            }
+          }
+          &--bg {
+            background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
+          }
+          &--bg & {
+            &-swiper {
+              &::after {
+                background: url(../../images/mobile/bifesta/main-slide-bg.png)
+                  no-repeat 50% 100%;
+                background-size: 371px 147px;
               }
             }
           }
@@ -787,19 +793,7 @@
       }
       &-swiper {
         position: relative;
-        background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          height: 147px;
-          background: url(../../images/mobile/gatsby/main-slide-bg.png)
-            no-repeat 50% 100%;
-          background-size: 371px 147px;
-        }
+
         .swiper {
           // margin: 0 -30px;
           &-wrapper {
@@ -837,6 +831,25 @@
                 background: #00909a;
               }
             }
+          }
+        }
+      }
+      &--bg {
+        background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
+      }
+      &--bg & {
+        &-swiper {
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 147px;
+            background: url(../../images/mobile/gatsby/main-slide-bg.png)
+              no-repeat 50% 100%;
+            background-size: 371px 147px;
           }
         }
       }

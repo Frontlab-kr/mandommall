@@ -12024,15 +12024,15 @@ a {
   background: #fff7e0;
   border-color: #fff7e0;
 }
-.mandom-bifesta .mandom-main-slide-swiper {
-  background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
-}
-.mandom-bifesta .mandom-main-slide-swiper::after {
-  background: url(../../images/mobile/bifesta/main-slide-bg.png) no-repeat 50% 100%;
-  background-size: 371px 147px;
-}
 .mandom-bifesta .mandom-main-slide-swiper .swiper-pagination-bullet-active {
   background: #a67e14;
+}
+.mandom-bifesta .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
+}
+.mandom-bifesta .mandom-main-slide--bg .mandom-bifesta .mandom-main-slide-swiper::after {
+  background: url(../../images/mobile/bifesta/main-slide-bg.png) no-repeat 50% 100%;
+  background-size: 371px 147px;
 }
 .mandom-bifesta .mandom-main-tips::before {
   background: #ffeab1 url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50% 50%;
@@ -12736,7 +12736,6 @@ a {
 }
 .mandom-main-slide {
   padding: 100px 0 60px 0;
-  background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
 }
 .mandom-main-slide__title {
   margin-bottom: 50px;
@@ -12752,17 +12751,6 @@ a {
   display: flex;
   margin: 0 -10px;
   padding: 0 10px;
-}
-.mandom-main-slide-swiper:after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: -280px;
-  bottom: -60px;
-  width: 865px;
-  height: 339px;
-  background: url(../../images/desktop/gatsby/main-slide-bg.svg) no-repeat 50% 100%;
-  background-size: 865px 339px;
 }
 .mandom-main-slide-swiper .swiper {
   width: calc(100% + 20px);
@@ -12791,6 +12779,20 @@ a {
 }
 .mandom-main-slide-swiper .mandom-product-info {
   padding: 30px 20px;
+}
+.mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #eff4f5 100%);
+}
+.mandom-main-slide--bg .mandom-main-slide-swiper:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -280px;
+  bottom: -60px;
+  width: 865px;
+  height: 339px;
+  background: url(../../images/desktop/gatsby/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 865px 339px;
 }
 .mandom-main-recommend {
   padding: 100px 0 60px 0;
