@@ -20,9 +20,9 @@ $(document).ready(function () {
 var stateMenu = false;
 function menuOpen() {
   stateMenu = true;
-  $('.mandom').addClass('stateMenu');
+  $('body').addClass('stateMenu');
 }
 function menuClose() {
   stateMenu = true;
-  $('.mandom').removeClass('stateMenu');
+  $('body').removeClass('stateMenu');
 }

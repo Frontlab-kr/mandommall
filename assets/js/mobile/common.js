@@ -20,11 +20,11 @@ $(document).ready(function () {
 var stateMenu = true;
 function menuOpen() {
   stateMenu = true;
-  $('.mandom').addClass('stateMenu');
+  $('body').addClass('stateMenu');
 }
 function menuClose() {
   stateMenu = true;
-  $('.mandom').removeClass('stateMenu');
+  $('body').removeClass('stateMenu');
 }
 $(document).ready(function () {
   //

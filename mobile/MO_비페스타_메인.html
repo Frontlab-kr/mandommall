@@ -384,8 +384,8 @@
     </script>
     <!-- Doyouad End -->
   </head>
-  <body>
-    <div class="mandom mandom-bifesta">
+  <body data-main="bifesta">
+    <div id="wrap">
       <div id="mandom-header"></div>
       <div id="mandom-menu"></div>
       <div class="mandom-body">
@@ -596,21 +596,61 @@
           </div>
           <div class="mandom-main-tips">
             <div class="mandom-main-tips__title">Bifesta Styling Tips</div>
-            <div class="mandom-main-tips__iframe">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/aGVMT_Po_ug?si=jQG3BrqL825HL6WP"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="mandom-main-tips__iframe">
+                    <img src="https://picsum.photos/1320/185" alt="" />
+                    <!--               
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/aGVMT_Po_ug?si=jQG3BrqL825HL6WP"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    ></iframe> -->
+                  </div>
+                  <div class="mandom-main-tips-list">
+                    <div class="mandom-main-tips-list-item"></div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="mandom-main-tips__iframe">
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/aGVMT_Po_ug?si=jQG3BrqL825HL6WP"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="mandom-main-tips-list">
+                    <div class="mandom-main-tips-list-item"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-pause"></div>
+              <div class="swiper-button-play" style="display: none"></div>
             </div>
-            <div class="mandom-main-tips-list">
-              <div class="mandom-main-tips-list-item"></div>
-            </div>
+            <script>
+              $(document).ready(function () {
+                var swiper04 = new Swiper('.mandom-main-tips .swiper', {
+                  autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  },
+                  loop: true,
+                  spaceBetween: 20,
+                });
+              });
+            </script>
             <script>
               $(document).ready(function () {
                 $('.mandom-main-tips-list-item').load(

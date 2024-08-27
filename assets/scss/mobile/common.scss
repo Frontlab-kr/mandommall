@@ -15,88 +15,6 @@
 }
 
 .mandom {
-  padding-top: 60px;
-  &-bifesta {
-    .mandom {
-      &-header {
-        &-logo {
-          width: 68px;
-          height: 26px;
-          background: url(../../images/mobile/bifesta/logo.png) no-repeat 50%
-            50%;
-          background-size: cover;
-        }
-      }
-      &-footer {
-        &-search {
-          background: #a67e14 url(../../images/mobile/footer-search.svg)
-            no-repeat 50% 50%;
-        }
-      }
-
-      &-main {
-        &-menu {
-          a {
-            span {
-              background: #fff7e0;
-              border-color: #fff7e0;
-            }
-          }
-        }
-
-        &-slide {
-          &-swiper {
-            .swiper {
-              &-pagination {
-                &-bullet {
-                  &-active {
-                    background: #a67e14;
-                  }
-                }
-              }
-            }
-          }
-          &--bg {
-            background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
-          }
-          &--bg & {
-            &-swiper {
-              &::after {
-                background: url(../../images/mobile/bifesta/main-slide-bg.png)
-                  no-repeat 50% 100%;
-                background-size: 371px 147px;
-              }
-            }
-          }
-        }
-
-        &-tips {
-          &::before {
-            background: #ffeab1
-              url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50%
-              50%;
-            background-size: cover;
-          }
-          &__title {
-            color: #000;
-          }
-        }
-      }
-
-      &-product {
-        &-text {
-          color: #a67e14;
-        }
-      }
-    }
-  }
-  &.stateMenu {
-    height: 0;
-    overflow: hidden;
-    .mandom-layer-menu {
-      display: block;
-    }
-  }
   //layout
   &-header {
     position: fixed;
@@ -549,6 +467,7 @@
     }
   }
   &-product {
+    position: relative;
     display: flex;
     &-thumb {
       position: relative;
@@ -634,6 +553,28 @@
       flex-wrap: wrap;
       gap: 4px;
       margin-top: 9px;
+    }
+    &--soldout {
+      pointer-events: none;
+    }
+    &--soldout & {
+      &-thumb {
+        &::before {
+          content: '품절';
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 20;
+          font-size: 20px;
+          color: #fff;
+        }
+      }
     }
   }
   &-list {
@@ -1444,6 +1385,90 @@
       .tab-content {
         padding: 30px 20px;
       }
+    }
+  }
+}
+body {
+  padding-top: 60px;
+  &[data-main='bifesta'] {
+    .mandom {
+      &-header {
+        &-logo {
+          width: 68px;
+          height: 26px;
+          background: url(../../images/mobile/bifesta/logo.png) no-repeat 50%
+            50%;
+          background-size: cover;
+        }
+      }
+      &-footer {
+        &-search {
+          background: #a67e14 url(../../images/mobile/footer-search.svg)
+            no-repeat 50% 50%;
+        }
+      }
+
+      &-main {
+        &-menu {
+          a {
+            span {
+              background: #fff7e0;
+              border-color: #fff7e0;
+            }
+          }
+        }
+
+        &-slide {
+          &-swiper {
+            .swiper {
+              &-pagination {
+                &-bullet {
+                  &-active {
+                    background: #a67e14;
+                  }
+                }
+              }
+            }
+          }
+          &--bg {
+            background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
+          }
+          &--bg & {
+            &-swiper {
+              &::after {
+                background: url(../../images/mobile/bifesta/main-slide-bg.png)
+                  no-repeat 50% 100%;
+                background-size: 371px 147px;
+              }
+            }
+          }
+        }
+
+        &-tips {
+          &::before {
+            background: #ffeab1
+              url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50%
+              50%;
+            background-size: cover;
+          }
+          &__title {
+            color: #000;
+          }
+        }
+      }
+
+      &-product {
+        &-text {
+          color: #a67e14;
+        }
+      }
+    }
+  }
+  &.stateMenu {
+    height: 0;
+    overflow: hidden;
+    .mandom-layer-menu {
+      display: block;
     }
   }
 }
