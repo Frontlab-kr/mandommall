@@ -12065,7 +12065,7 @@ a {
 }
 .mandom-footer {
   position: relative;
-  z-index: 50;
+  z-index: 30;
   padding: 20px 20px 160px 20px;
   background: #fafafa;
 }
@@ -12196,8 +12196,9 @@ a {
 }
 .mandom-footer-top {
   position: fixed;
+  z-index: 60;
   right: 20px;
-  bottom: 105px;
+  bottom: 125px;
   width: 40px;
   height: 40px;
   border-radius: 99px;
@@ -12216,8 +12217,9 @@ a {
 }
 .mandom-footer-search {
   position: fixed;
+  z-index: 60;
   right: 20px;
-  bottom: 55px;
+  bottom: 75px;
   width: 40px;
   height: 40px;
   border-radius: 99px;
@@ -12237,6 +12239,9 @@ a {
 .mandom-body {
   position: relative;
   z-index: 40;
+}
+.mandom-body .product-extra.active {
+  transform: translateY(0);
 }
 .mandom-layer-menu {
   position: fixed;
@@ -12481,6 +12486,62 @@ a {
 .mandom-product-info {
   display: block;
   padding: 12px 0 0 0;
+}
+.mandom-product-one {
+  display: none;
+}
+.mandom-product-share {
+  display: flex;
+  gap: 10px;
+}
+.mandom-product-share__heart {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../../images/mobile/heart.svg) no-repeat 50% 50%;
+  border: 0;
+  font-size: 0;
+}
+.mandom-product-share__heart.active {
+  background: url(../../images/mobile/heart-active.svg) no-repeat 50% 50%;
+}
+.mandom-product-share__share {
+  position: relative;
+}
+.mandom-product-share__share > button {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../../images/mobile/share.svg) no-repeat 50% 50%;
+  border: 0;
+  font-size: 0;
+}
+.mandom-product-share__share .box-share {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  padding: 10px;
+  width: 230px;
+  text-align: center;
+  border: 1px solid #a1a1a1;
+  background-color: #fff;
+}
+.mandom-product-share__share .box-share strong {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #444;
+  font-size: 12px;
+}
+.mandom-product-share__share .box-share a {
+  display: inline-block;
+  margin: 0 3px;
+  vertical-align: top;
+}
+.mandom-product-share__share .box-share img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
 }
 .mandom-product-text {
   margin-bottom: 5px;
@@ -13013,6 +13074,94 @@ a {
 .mandom-category-menu--white a.active::after {
   display: none;
 }
+.mandom-gnb {
+  position: relative;
+  z-index: 60;
+  height: 47px;
+  background-color: #000;
+}
+.mandom-gnb .mandom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.mandom-gnb ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.mandom-gnb ul li {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.mandom-gnb ul li a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  color: #aaa;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.08px;
+}
+.mandom-gnb ul li a:hover {
+  color: #fff;
+}
+.mandom-gnb ul li a.active {
+  color: #fff;
+  font-weight: 700;
+}
+.mandom-gnb ul li a.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid #fff;
+}
+.mandom-gnb ul li ul {
+  display: none;
+  position: absolute;
+  top: 47px;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #f2f2f2;
+  z-index: 30;
+}
+.mandom-gnb ul li ul li a:hover {
+  color: #000;
+}
+.mandom-gnb ul li ul li.active a {
+  color: #000;
+}
+.mandom-gnb ul li.active > a {
+  color: #fff;
+  font-weight: 700;
+}
+.mandom-gnb ul li.active > a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #fff;
+}
+.mandom-gnb ul li.active ul {
+  display: flex;
+}
 .mandom-list {
   margin-bottom: 50px;
 }
@@ -13089,6 +13238,32 @@ a {
        column-gap: 8px;
   row-gap: 30px;
 }
+.mandom-list--one .mandom-list-head__type {
+  background: url(../../images/mobile/one-view.svg) no-repeat 50% 50%;
+}
+.mandom-list--one .mandom-list-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  row-gap: 30px;
+}
+.mandom-list--one .mandom-list-list .mandom-product {
+  flex-direction: column;
+}
+.mandom-list--one .mandom-list-list .mandom-product-thumb {
+  width: 100%;
+  min-width: 100%;
+  height: 0;
+  padding-top: 100%;
+}
+.mandom-list--one .mandom-list-list .mandom-product-thumb img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .mandom-list-button {
   display: flex;
   align-items: center;
@@ -13150,12 +13325,42 @@ a {
   background: url(../../images/mobile/heart-active.svg) no-repeat 50% 50%;
 }
 .mandom-detail-info-button__share {
+  position: relative;
+}
+.mandom-detail-info-button__share > button {
   display: block;
   width: 24px;
   height: 24px;
   background: url(../../images/mobile/share.svg) no-repeat 50% 50%;
   border: 0;
   font-size: 0;
+}
+.mandom-detail-info-button__share .box-share {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  padding: 10px;
+  width: 230px;
+  text-align: center;
+  border: 1px solid #a1a1a1;
+  background-color: #fff;
+}
+.mandom-detail-info-button__share .box-share strong {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #444;
+  font-size: 12px;
+}
+.mandom-detail-info-button__share .box-share a {
+  display: inline-block;
+  margin: 0 3px;
+  vertical-align: top;
+}
+.mandom-detail-info-button__share .box-share img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
 }
 .mandom-detail-info-text {
   margin-bottom: 5px;
@@ -13238,7 +13443,6 @@ a {
 }
 .mandom-detail-pay {
   display: flex;
-  border-top: 10px solid #f5f5f5;
 }
 .mandom-detail-pay button {
   display: flex;

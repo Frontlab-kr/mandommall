@@ -15,6 +15,7 @@ $(document).ready(function () {
   $('#mandom-header').load('../components/mobile/header.html');
   $('#mandom-footer').load('../components/mobile/footer.html');
   $('#mandom-menu').load('../components/mobile/menu.html');
+  $('#mandom-gnb').load('../components/mobile/gnb.html');
 });
 
 var stateMenu = true;

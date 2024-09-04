@@ -1,0 +1,77 @@
+<div class="mandom-gnb">
+  <div class="mandom-inner">
+    <ul>
+      <li>
+        <a href="">헤어왁스</a>
+        <ul>
+          <li class="active"><a href="">무빙러버왁스</a></li>
+          <li><a href="">헤어잼</a></li>
+          <li><a href="">스타일링왁스</a></li>
+          <li><a href="">메타러버왁스</a></li>
+          <li><a href="">스타일링왁스</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="">헤어스프레이</a>
+        <ul>
+          <li class="active"><a href="">무빙러버왁스2</a></li>
+          <li><a href="">헤어잼2</a></li>
+          <li><a href="">스타일링왁스2</a></li>
+          <li><a href="">메타러버왁스2</a></li>
+          <li><a href="">스타일링왁스2</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="">헤어젤/헤어폼</a>
+        <ul>
+          <li class="active"><a href="">무빙러버왁스3</a></li>
+          <li><a href="">헤어잼3</a></li>
+          <li><a href="">스타일링왁스3</a></li>
+          <li><a href="">메타러버왁스3</a></li>
+          <li><a href="">스타일링왁스3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="">헤어케어</a>
+        <ul>
+          <li class="active"><a href="">무빙러버왁스4</a></li>
+          <li><a href="">헤어잼4</a></li>
+          <li><a href="">스타일링왁스4</a></li>
+          <li><a href="">메타러버왁스4</a></li>
+          <li><a href="">스타일링왁스4</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="">헤어스프레이</a>
+        <ul>
+          <li class="active"><a href="">무빙러버왁스5</a></li>
+          <li><a href="">헤어잼5</a></li>
+          <li><a href="">스타일링왁스5</a></li>
+          <li><a href="">메타러버왁스5</a></li>
+          <li><a href="">스타일링왁스5</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      $(document).ready(function () {
+        $('.mandom-gnb .mandom-inner > ul > li').hover(
+          function () {
+            // over
+            $('.mandom-gnb .mandom-inner > ul > li').removeClass('active');
+            $(this).addClass('active');
+          },
+          function () {
+            // out
+            $('.mandom-gnb .mandom-inner > ul > li').removeClass('active');
+          }
+        );
+      });
+    </script>
+    <div class="mandom-gnb-link">
+      <a href="">기획전</a>
+      <a href="">이벤트</a>
+      <a href="">아울렛</a>
+      <a href="">구매헤택</a>
+    </div>
+  </div>
+</div>

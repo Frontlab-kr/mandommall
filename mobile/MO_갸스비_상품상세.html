@@ -1574,7 +1574,41 @@
                 <button class="mandom-detail-info-button__heart active">
                   좋아요
                 </button>
-                <button class="mandom-detail-info-button__share">공유</button>
+                <div class="mandom-detail-info-button__share">
+                  <button onclick="$('.box-share').toggle()">공유</button>
+                  <div
+                    id="popSocailShare"
+                    class="box-share"
+                    style="display: none"
+                  >
+                    <strong>공유하기</strong>
+                    <a href="javascript:" onclick="snsShare('N');"
+                      ><img
+                        src="/m/images/m/common/ico_share_naver.jpg"
+                        alt="네이버 공유"
+                    /></a>
+                    <a href="javascript:" onclick="snsShare('F');"
+                      ><img
+                        src="/m/images/m/common/ico_share_facebook.jpg"
+                        alt="페이스북 공유"
+                    /></a>
+                    <a href="javascript:" onclick="snsShare('K');"
+                      ><img
+                        src="/m/images/m/common/ico_share_kakao.jpg"
+                        alt="카카오 공유"
+                    /></a>
+                    <a href="javascript:" onclick="snsShare('T');"
+                      ><img
+                        src="/m/images/m/common/ico_share_twit.jpg"
+                        alt="트위터 공유"
+                    /></a>
+                    <a href="javascript:" onclick="urlShare();"
+                      ><img
+                        src="/m/images/m/common/ico_share_url.jpg"
+                        alt="URL 공유"
+                    /></a>
+                  </div>
+                </div>
               </div>
             </div>
 

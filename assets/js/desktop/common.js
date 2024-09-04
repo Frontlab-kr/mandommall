@@ -14,7 +14,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('#mandom-header').load('../components/desktop/header.html');
   $('#mandom-footer').load('../components/desktop/footer.html');
-  $('#mandom-menu').load('../components/desktop/menu.html');
+  $('#mandom-gnb').load('../components/desktop/gnb.html');
 });
 
 var stateMenu = false;
