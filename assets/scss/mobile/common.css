@@ -13278,6 +13278,18 @@ a {
   display: block;
   width: 100%;
 }
+.mandom-detail-thumb .swiper-slide.ico-membersonly:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  z-index: 20;
+  width: 62px;
+  height: 62px;
+  background: url("../../images/w/contents/ico_membersonly.png") repeat 50% 50%;
+  background-size: cover;
+}
 .mandom-detail-thumb .swiper-pagination {
   display: flex;
   left: 20px;

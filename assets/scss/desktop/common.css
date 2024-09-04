@@ -12359,13 +12359,13 @@ a {
   font-size: 0;
 }
 .mandom-footer-sns-facebook {
-  background: #fff url(../../images/desktop/jt-facebook.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/jt-facebook.svg) no-repeat 50% 50%;
 }
 .mandom-footer-sns-instagram {
-  background: #fff url(../../images/desktop/jt-instagram.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/jt-instagram.svg) no-repeat 50% 50%;
 }
 .mandom-footer-sns-youtube {
-  background: #fff url(../../images/desktop/jt-youtube.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/jt-youtube.svg) no-repeat 50% 50%;
 }
 .mandom-footer-agree button {
   display: flex;
