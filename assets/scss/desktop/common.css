@@ -12064,14 +12064,14 @@ a {
   display: block;
   width: 60px;
   height: 60px;
-  background: url(../../images/mobile/header-menu.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/header-menu.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 .mandom-header-logo {
   display: block;
-  width: 82px;
-  height: 24px;
-  background: url(../../images/mobile/gatsby/logo.png) no-repeat 50% 50%;
+  width: 103px;
+  height: 30px;
+  background: url(../../images/desktop/gatsby/logo.svg) no-repeat 50% 50%;
   background-size: cover;
 }
 .mandom-header-cart {
@@ -12546,7 +12546,7 @@ a {
   margin-left: -4px;
   width: 18px;
   height: 18px;
-  background: url(../../images/mobile/star.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/star.svg) no-repeat 50% 50%;
   font-size: 0;
 }
 .mandom-score__star span:first-child {
@@ -12772,7 +12772,7 @@ a {
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.4) url(../../images/mobile/main-kv-pause.svg) no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.4) url(../../images/desktop/main-kv-pause.svg) no-repeat 50% 50%;
 }
 .mandom-main-kv .swiper-button-play {
   position: absolute;
@@ -12782,7 +12782,7 @@ a {
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  background: #f60 url(../../images/mobile/main-kv-pause.svg) no-repeat 50% 50%;
+  background: #f60 url(../../images/desktop/main-kv-pause.svg) no-repeat 50% 50%;
 }
 .mandom-main-kv .mandom-inner {
   position: absolute;
@@ -13255,7 +13255,7 @@ a {
   display: block;
   width: 24px;
   height: 24px;
-  background: url(../../images/mobile/iconamoon_arrow-up-2-thin.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/iconamoon_arrow-up-2-thin.svg) no-repeat 50% 50%;
 }
 .mandom-list-head__select select {
   -webkit-appearance: none;
@@ -13273,7 +13273,7 @@ a {
 .mandom-list-head__type {
   width: 24px;
   height: 24px;
-  background: url(../../images/mobile/list-view.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/list-view.svg) no-repeat 50% 50%;
   border: 0;
   font-size: 0;
 }
@@ -13287,7 +13287,7 @@ a {
   margin-top: 0;
 }
 .mandom-list--grid .mandom-list-head__type {
-  background: url(../../images/mobile/grid-view.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/grid-view.svg) no-repeat 50% 50%;
 }
 .mandom-list--grid .mandom-list-list {
   display: grid;
@@ -13390,12 +13390,12 @@ a {
   display: block;
   width: 24px;
   height: 24px;
-  background: url(../../images/mobile/heart.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/heart.svg) no-repeat 50% 50%;
   border: 0;
   font-size: 0;
 }
 .mandom-detail-info-button__heart.active {
-  background: url(../../images/mobile/heart-active.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/heart-active.svg) no-repeat 50% 50%;
 }
 .mandom-detail-info-button__share {
   position: relative;
@@ -13404,7 +13404,7 @@ a {
   display: block;
   width: 24px;
   height: 24px;
-  background: url(../../images/mobile/share.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/share.svg) no-repeat 50% 50%;
   border: 0;
   font-size: 0;
 }
@@ -13750,7 +13750,7 @@ a {
   letter-spacing: -0.08px;
 }
 .mandom-detail-pay__npay {
-  background: #01c73c url(../../images/mobile/npay.svg) no-repeat 50% 50%;
+  background: #01c73c url(../../images/desktop/npay.svg) no-repeat 50% 50%;
   font-size: 0 !important;
 }
 .mandom-detail-pay__cart {
@@ -13831,37 +13831,144 @@ a {
 }
 
 body[data-main=bifesta] .mandom-header-logo {
-  width: 68px;
-  height: 26px;
-  background: url(../../images/mobile/bifesta/logo.png) no-repeat 50% 50%;
+  width: 90px;
+  height: 34px;
+  background: url(../../images/desktop/bifesta/logo.svg) no-repeat 50% 50%;
   background-size: cover;
 }
 body[data-main=bifesta] .mandom-footer-search {
-  background: #a67e14 url(../../images/mobile/footer-search.svg) no-repeat 50% 50%;
-}
-body[data-main=bifesta] .mandom-main-menu a span {
-  background: #fff7e0;
-  border-color: #fff7e0;
+  background: #a67e14 url(../../images/desktop/footer-search.svg) no-repeat 50% 50%;
 }
 body[data-main=bifesta] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
   background: #a67e14;
 }
 body[data-main=bifesta] .mandom-main-slide--bg {
-  background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
+  background: linear-gradient(180deg, #fff 0%, #fff9ed 100%);
 }
-body[data-main=bifesta] .mandom-main-slide--bg body[data-main=bifesta] .mandom-main-slide-swiper::after {
-  background: url(../../images/mobile/bifesta/main-slide-bg.png) no-repeat 50% 100%;
-  background-size: 371px 147px;
+body[data-main=bifesta] .mandom-main-slide-swiper::after {
+  background: url(../../images/desktop/bifesta/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 865px 339px;
 }
 body[data-main=bifesta] .mandom-main-tips::before {
-  background: #ffeab1 url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50% 50%;
-  background-size: cover;
+  background: #ffeab1;
 }
-body[data-main=bifesta] .mandom-main-tips__title {
+body[data-main=bifesta] .mandom-main-tips__title, body[data-main=bifesta] .mandom-main-tips__text {
   color: #000;
 }
 body[data-main=bifesta] .mandom-product-text {
   color: #a67e14;
+}
+body[data-main=lucidol] .mandom-header-logo {
+  width: 165px;
+  height: 23px;
+  background: url(../../images/desktop/lucidol/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=lucidol] .mandom-footer-search {
+  background: #562023 url(../../images/desktop/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=lucidol] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #562023;
+}
+body[data-main=lucidol] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #ffedf7 100%);
+}
+body[data-main=lucidol] .mandom-main-slide-swiper::after {
+  background: url(../../images/desktop/lucidol/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 865px 339px;
+}
+body[data-main=lucidol] .mandom-main-tips::before {
+  background: #ffedf7;
+}
+body[data-main=lucidol] .mandom-main-tips__title, body[data-main=lucidol] .mandom-main-tips__text {
+  color: #000;
+}
+body[data-main=lucidol] .mandom-product-text {
+  color: #562023;
+}
+body[data-main=diane] .mandom-header-logo {
+  width: 83px;
+  height: 37px;
+  background: url(../../images/desktop/diane/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=diane] .mandom-footer-search {
+  background: #5b4a27 url(../../images/desktop/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=diane] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #5b4a27;
+}
+body[data-main=diane] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #fff9ed 100%);
+}
+body[data-main=diane] .mandom-main-slide-swiper::after {
+  background: url(../../images/desktop/diane/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 865px 339px;
+}
+body[data-main=diane] .mandom-main-tips::before {
+  background: #fff9ed;
+}
+body[data-main=diane] .mandom-main-tips__title, body[data-main=diane] .mandom-main-tips__text {
+  color: #000;
+}
+body[data-main=diane] .mandom-product-text {
+  color: #5b4a27;
+}
+body[data-main=lucido] .mandom-header-logo {
+  width: 135px;
+  height: 37px;
+  background: url(../../images/desktop/lucido/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=lucido] .mandom-footer-search {
+  background: #92c5eb url(../../images/desktop/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=lucido] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #92c5eb;
+}
+body[data-main=lucido] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #edf7ff 100%);
+}
+body[data-main=lucido] .mandom-main-slide-swiper::after {
+  background: url(../../images/desktop/lucido/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 865px 339px;
+}
+body[data-main=lucido] .mandom-main-tips::before {
+  background: #edf7ff;
+}
+body[data-main=lucido] .mandom-main-tips__title, body[data-main=lucido] .mandom-main-tips__text {
+  color: #000;
+}
+body[data-main=lucido] .mandom-product-text {
+  color: #92c5eb;
+}
+body[data-main=dentalpro] .mandom-header-logo {
+  width: 229px;
+  height: 22px;
+  background: url(../../images/desktop/dentalpro/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=dentalpro] .mandom-footer-search {
+  background: #e73434 url(../../images/desktop/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=dentalpro] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #e73434;
+}
+body[data-main=dentalpro] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #ffeded 100%);
+}
+body[data-main=dentalpro] .mandom-main-slide-swiper::after {
+  background: url(../../images/desktop/dentalpro/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 865px 339px;
+}
+body[data-main=dentalpro] .mandom-main-tips::before {
+  background: #ffeded;
+}
+body[data-main=dentalpro] .mandom-main-tips__title, body[data-main=dentalpro] .mandom-main-tips__text {
+  color: #000;
+}
+body[data-main=dentalpro] .mandom-product-text {
+  color: #e73434;
 }
 body.stateMenu .mandom-menu {
   display: block;

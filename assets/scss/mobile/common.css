@@ -12809,7 +12809,7 @@ a {
   bottom: 0;
   left: 0;
   height: 147px;
-  background: url(../../images/mobile/gatsby/main-slide-bg.png) no-repeat 50% 100%;
+  background: url(../../images/mobile/gatsby/main-slide-bg.svg) no-repeat 50% 100%;
   background-size: 371px 147px;
 }
 .mandom-main-recommend {
@@ -13529,17 +13529,13 @@ body {
   padding-top: 60px;
 }
 body[data-main=bifesta] .mandom-header-logo {
-  width: 68px;
-  height: 26px;
-  background: url(../../images/mobile/bifesta/logo.png) no-repeat 50% 50%;
+  width: 76px;
+  height: 29px;
+  background: url(../../images/mobile/bifesta/logo.svg) no-repeat 50% 50%;
   background-size: cover;
 }
 body[data-main=bifesta] .mandom-footer-search {
   background: #a67e14 url(../../images/mobile/footer-search.svg) no-repeat 50% 50%;
-}
-body[data-main=bifesta] .mandom-main-menu a span {
-  background: #fff7e0;
-  border-color: #fff7e0;
 }
 body[data-main=bifesta] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
   background: #a67e14;
@@ -13547,8 +13543,8 @@ body[data-main=bifesta] .mandom-main-slide-swiper .swiper-pagination-bullet-acti
 body[data-main=bifesta] .mandom-main-slide--bg {
   background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
 }
-body[data-main=bifesta] .mandom-main-slide--bg body[data-main=bifesta] .mandom-main-slide-swiper::after {
-  background: url(../../images/mobile/bifesta/main-slide-bg.png) no-repeat 50% 100%;
+body[data-main=bifesta] .mandom-main-slide-swiper::after {
+  background: url(../../images/mobile/bifesta/main-slide-bg.svg) no-repeat 50% 100%;
   background-size: 371px 147px;
 }
 body[data-main=bifesta] .mandom-main-tips::before {
@@ -13560,6 +13556,122 @@ body[data-main=bifesta] .mandom-main-tips__title {
 }
 body[data-main=bifesta] .mandom-product-text {
   color: #a67e14;
+}
+body[data-main=lucidol] .mandom-header-logo {
+  width: 128px;
+  height: 18px;
+  background: url(../../images/mobile/lucidol/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=lucidol] .mandom-footer-search {
+  background: #562023 url(../../images/mobile/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=lucidol] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #562023;
+}
+body[data-main=lucidol] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #ffedf7 100%);
+}
+body[data-main=lucidol] .mandom-main-slide-swiper::after {
+  background: url(../../images/mobile/lucidol/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 371px 147px;
+}
+body[data-main=lucidol] .mandom-main-tips::before {
+  background: #ffedf7 url(../../images/mobile/lucidol/main-tips-bg.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=lucidol] .mandom-main-tips__title {
+  color: #000;
+}
+body[data-main=lucidol] .mandom-product-text {
+  color: #562023;
+}
+body[data-main=diane] .mandom-header-logo {
+  width: 71px;
+  height: 31px;
+  background: url(../../images/mobile/diane/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=diane] .mandom-footer-search {
+  background: #5b4a27 url(../../images/mobile/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=diane] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #5b4a27;
+}
+body[data-main=diane] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #fff9ed 100%);
+}
+body[data-main=diane] .mandom-main-slide-swiper::after {
+  background: url(../../images/mobile/diane/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 371px 147px;
+}
+body[data-main=diane] .mandom-main-tips::before {
+  background: #fff9ed url(../../images/mobile/diane/main-tips-bg.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=diane] .mandom-main-tips__title {
+  color: #000;
+}
+body[data-main=diane] .mandom-product-text {
+  color: #5b4a27;
+}
+body[data-main=lucido] .mandom-header-logo {
+  width: 88px;
+  height: 24px;
+  background: url(../../images/mobile/lucido/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=lucido] .mandom-footer-search {
+  background: #92c5eb url(../../images/mobile/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=lucido] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #92c5eb;
+}
+body[data-main=lucido] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #edf7ff 100%);
+}
+body[data-main=lucido] .mandom-main-slide-swiper::after {
+  background: url(../../images/mobile/lucido/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 371px 147px;
+}
+body[data-main=lucido] .mandom-main-tips::before {
+  background: #edf7ff url(../../images/mobile/lucido/main-tips-bg.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=lucido] .mandom-main-tips__title {
+  color: #000;
+}
+body[data-main=lucido] .mandom-product-text {
+  color: #92c5eb;
+}
+body[data-main=dentalpro] .mandom-header-logo {
+  width: 161px;
+  height: 16px;
+  background: url(../../images/mobile/dentalpro/logo.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=dentalpro] .mandom-footer-search {
+  background: #e73434 url(../../images/mobile/footer-search.svg) no-repeat 50% 50%;
+}
+body[data-main=dentalpro] .mandom-main-slide-swiper .swiper-pagination-bullet-active {
+  background: #e73434;
+}
+body[data-main=dentalpro] .mandom-main-slide--bg {
+  background: linear-gradient(180deg, #fff 0%, #ffeded 100%);
+}
+body[data-main=dentalpro] .mandom-main-slide-swiper::after {
+  background: url(../../images/mobile/dentalpro/main-slide-bg.svg) no-repeat 50% 100%;
+  background-size: 371px 147px;
+}
+body[data-main=dentalpro] .mandom-main-tips::before {
+  background: #ffeded url(../../images/mobile/dentalpro/main-tips-bg.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
+body[data-main=dentalpro] .mandom-main-tips__title {
+  color: #000;
+}
+body[data-main=dentalpro] .mandom-product-text {
+  color: #e73434;
 }
 body.stateMenu {
   height: 0;

@@ -72,14 +72,14 @@
       display: block;
       width: 60px;
       height: 60px;
-      background: url(../../images/mobile/header-menu.svg) no-repeat 50% 50%;
+      background: url(../../images/desktop/header-menu.svg) no-repeat 50% 50%;
       font-size: 0;
     }
     &-logo {
       display: block;
-      width: 82px;
-      height: 24px;
-      background: url(../../images/mobile/gatsby/logo.png) no-repeat 50% 50%;
+      width: 103px;
+      height: 30px;
+      background: url(../../images/desktop/gatsby/logo.svg) no-repeat 50% 50%;
       background-size: cover;
     }
     &-cart {
@@ -586,7 +586,7 @@
         margin-left: -4px;
         width: 18px;
         height: 18px;
-        background: url(../../images/mobile/star.svg) no-repeat 50% 50%;
+        background: url(../../images/desktop/star.svg) no-repeat 50% 50%;
         font-size: 0;
         &:first-child {
           margin-left: 0;
@@ -818,7 +818,7 @@
           border-radius: 20px;
 
           background: rgba(0, 0, 0, 0.4)
-            url(../../images/mobile/main-kv-pause.svg) no-repeat 50% 50%;
+            url(../../images/desktop/main-kv-pause.svg) no-repeat 50% 50%;
         }
         &-button-play {
           position: absolute;
@@ -829,7 +829,7 @@
           height: 20px;
           border-radius: 20px;
 
-          background: #f60 url(../../images/mobile/main-kv-pause.svg) no-repeat
+          background: #f60 url(../../images/desktop/main-kv-pause.svg) no-repeat
             50% 50%;
         }
       }
@@ -1333,7 +1333,7 @@
           display: block;
           width: 24px;
           height: 24px;
-          background: url(../../images/mobile/iconamoon_arrow-up-2-thin.svg)
+          background: url(../../images/desktop/iconamoon_arrow-up-2-thin.svg)
             no-repeat 50% 50%;
         }
         select {
@@ -1351,7 +1351,7 @@
       &__type {
         width: 24px;
         height: 24px;
-        background: url(../../images/mobile/list-view.svg) no-repeat 50% 50%;
+        background: url(../../images/desktop/list-view.svg) no-repeat 50% 50%;
         border: 0;
         font-size: 0;
       }
@@ -1368,7 +1368,7 @@
     &--grid & {
       &-head {
         &__type {
-          background: url(../../images/mobile/grid-view.svg) no-repeat 50% 50%;
+          background: url(../../images/desktop/grid-view.svg) no-repeat 50% 50%;
         }
       }
       &-list {
@@ -1477,11 +1477,11 @@
           display: block;
           width: 24px;
           height: 24px;
-          background: url(../../images/mobile/heart.svg) no-repeat 50% 50%;
+          background: url(../../images/desktop/heart.svg) no-repeat 50% 50%;
           border: 0;
           font-size: 0;
           &.active {
-            background: url(../../images/mobile/heart-active.svg) no-repeat 50%
+            background: url(../../images/desktop/heart-active.svg) no-repeat 50%
               50%;
           }
         }
@@ -1491,7 +1491,7 @@
             display: block;
             width: 24px;
             height: 24px;
-            background: url(../../images/mobile/share.svg) no-repeat 50% 50%;
+            background: url(../../images/desktop/share.svg) no-repeat 50% 50%;
             border: 0;
             font-size: 0;
           }
@@ -1846,7 +1846,7 @@
         letter-spacing: -0.08px;
       }
       &__npay {
-        background: #01c73c url(../../images/mobile/npay.svg) no-repeat 50% 50%;
+        background: #01c73c url(../../images/desktop/npay.svg) no-repeat 50% 50%;
         font-size: 0 !important;
       }
       &__cart {
@@ -1942,30 +1942,21 @@ body {
     .mandom {
       &-header {
         &-logo {
-          width: 68px;
-          height: 26px;
-          background: url(../../images/mobile/bifesta/logo.png) no-repeat 50%
+          width: 90px;
+          height: 34px;
+          background: url(../../images/desktop/bifesta/logo.svg) no-repeat 50%
             50%;
           background-size: cover;
         }
       }
       &-footer {
         &-search {
-          background: #a67e14 url(../../images/mobile/footer-search.svg)
+          background: #a67e14 url(../../images/desktop/footer-search.svg)
             no-repeat 50% 50%;
         }
       }
 
       &-main {
-        &-menu {
-          a {
-            span {
-              background: #fff7e0;
-              border-color: #fff7e0;
-            }
-          }
-        }
-
         &-slide {
           &-swiper {
             .swiper {
@@ -1979,27 +1970,22 @@ body {
             }
           }
           &--bg {
-            background: linear-gradient(180deg, #fff 0%, #fff2d0 100%);
+            background: linear-gradient(180deg, #fff 0%, #fff9ed 100%);
           }
-          &--bg & {
-            &-swiper {
-              &::after {
-                background: url(../../images/mobile/bifesta/main-slide-bg.png)
-                  no-repeat 50% 100%;
-                background-size: 371px 147px;
-              }
+          &-swiper {
+            &::after {
+              background: url(../../images/desktop/bifesta/main-slide-bg.svg)
+                no-repeat 50% 100%;
+              background-size: 865px 339px;
             }
           }
         }
-
         &-tips {
           &::before {
-            background: #ffeab1
-              url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50%
-              50%;
-            background-size: cover;
+            background: #ffeab1;
           }
-          &__title {
+          &__title,
+          &__text {
             color: #000;
           }
         }
@@ -2008,6 +1994,245 @@ body {
       &-product {
         &-text {
           color: #a67e14;
+        }
+      }
+    }
+  }
+  &[data-main='lucidol'] {
+    .mandom {
+      &-header {
+        &-logo {
+          width: 165px;
+          height: 23px;
+          background: url(../../images/desktop/lucidol/logo.svg) no-repeat 50%
+            50%;
+          background-size: cover;
+        }
+      }
+      &-footer {
+        &-search {
+          background: #562023 url(../../images/desktop/footer-search.svg)
+            no-repeat 50% 50%;
+        }
+      }
+
+      &-main {
+        &-slide {
+          &-swiper {
+            .swiper {
+              &-pagination {
+                &-bullet {
+                  &-active {
+                    background: #562023;
+                  }
+                }
+              }
+            }
+          }
+          &--bg {
+            background: linear-gradient(180deg, #fff 0%, #ffedf7 100%);
+          }
+          &-swiper {
+            &::after {
+              background: url(../../images/desktop/lucidol/main-slide-bg.svg)
+                no-repeat 50% 100%;
+              background-size: 865px 339px;
+            }
+          }
+        }
+        &-tips {
+          &::before {
+            background: #ffedf7;
+          }
+          &__title,
+          &__text {
+            color: #000;
+          }
+        }
+      }
+
+      &-product {
+        &-text {
+          color: #562023;
+        }
+      }
+    }
+  }
+  &[data-main='diane'] {
+    .mandom {
+      &-header {
+        &-logo {
+          width: 83px;
+          height: 37px;
+          background: url(../../images/desktop/diane/logo.svg) no-repeat 50% 50%;
+          background-size: cover;
+        }
+      }
+      &-footer {
+        &-search {
+          background: #5b4a27 url(../../images/desktop/footer-search.svg)
+            no-repeat 50% 50%;
+        }
+      }
+
+      &-main {
+        &-slide {
+          &-swiper {
+            .swiper {
+              &-pagination {
+                &-bullet {
+                  &-active {
+                    background: #5b4a27;
+                  }
+                }
+              }
+            }
+          }
+          &--bg {
+            background: linear-gradient(180deg, #fff 0%, #fff9ed 100%);
+          }
+          &-swiper {
+            &::after {
+              background: url(../../images/desktop/diane/main-slide-bg.svg)
+                no-repeat 50% 100%;
+              background-size: 865px 339px;
+            }
+          }
+        }
+        &-tips {
+          &::before {
+            background: #fff9ed;
+          }
+          &__title,
+          &__text {
+            color: #000;
+          }
+        }
+      }
+
+      &-product {
+        &-text {
+          color: #5b4a27;
+        }
+      }
+    }
+  }
+  &[data-main='lucido'] {
+    .mandom {
+      &-header {
+        &-logo {
+          width: 135px;
+          height: 37px;
+          background: url(../../images/desktop/lucido/logo.svg) no-repeat 50%
+            50%;
+          background-size: cover;
+        }
+      }
+      &-footer {
+        &-search {
+          background: #92c5eb url(../../images/desktop/footer-search.svg)
+            no-repeat 50% 50%;
+        }
+      }
+
+      &-main {
+        &-slide {
+          &-swiper {
+            .swiper {
+              &-pagination {
+                &-bullet {
+                  &-active {
+                    background: #92c5eb;
+                  }
+                }
+              }
+            }
+          }
+          &--bg {
+            background: linear-gradient(180deg, #fff 0%, #edf7ff 100%);
+          }
+          &-swiper {
+            &::after {
+              background: url(../../images/desktop/lucido/main-slide-bg.svg)
+                no-repeat 50% 100%;
+              background-size: 865px 339px;
+            }
+          }
+        }
+        &-tips {
+          &::before {
+            background: #edf7ff;
+          }
+          &__title,
+          &__text {
+            color: #000;
+          }
+        }
+      }
+
+      &-product {
+        &-text {
+          color: #92c5eb;
+        }
+      }
+    }
+  }
+  &[data-main='dentalpro'] {
+    .mandom {
+      &-header {
+        &-logo {
+          width: 229px;
+          height: 22px;
+          background: url(../../images/desktop/dentalpro/logo.svg) no-repeat 50%
+            50%;
+          background-size: cover;
+        }
+      }
+      &-footer {
+        &-search {
+          background: #e73434 url(../../images/desktop/footer-search.svg)
+            no-repeat 50% 50%;
+        }
+      }
+
+      &-main {
+        &-slide {
+          &-swiper {
+            .swiper {
+              &-pagination {
+                &-bullet {
+                  &-active {
+                    background: #e73434;
+                  }
+                }
+              }
+            }
+          }
+          &--bg {
+            background: linear-gradient(180deg, #fff 0%, #ffeded 100%);
+          }
+          &-swiper {
+            &::after {
+              background: url(../../images/desktop/dentalpro/main-slide-bg.svg)
+                no-repeat 50% 100%;
+              background-size: 865px 339px;
+            }
+          }
+        }
+        &-tips {
+          &::before {
+            background: #ffeded;
+          }
+          &__title,
+          &__text {
+            color: #000;
+          }
+        }
+      }
+
+      &-product {
+        &-text {
+          color: #e73434;
         }
       }
     }
