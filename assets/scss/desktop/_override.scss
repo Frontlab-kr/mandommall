@@ -43,3 +43,18 @@ a {
     }
   }
 }
+.collapse:not(.show) {
+  display: none;
+}
+.ms-1 {
+  margin-left: 4px !important;
+}
+.ms-2 {
+  margin-left: 8px !important;
+}
+.me-1 {
+  margin-right: 4px !important;
+}
+.me-2 {
+  margin-right: 8px !important;
+}

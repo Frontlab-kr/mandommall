@@ -30,10 +30,12 @@ a {
 
 .btn {
   &-lg {
-    padding: 12px 40px;
+    padding: 14px 40px;
     font-size: 14px;
   }
   &-primary {
+    background: #00909a;
+    border-color: #00909a;
     color: #fff;
   }
   &-outline {
@@ -42,4 +44,20 @@ a {
       color: #000;
     }
   }
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+.ms-1 {
+  margin-left: 4px !important;
+}
+.ms-2 {
+  margin-left: 8px !important;
+}
+.me-1 {
+  margin-right: 4px !important;
+}
+.me-2 {
+  margin-right: 8px !important;
 }

@@ -10,9 +10,25 @@
       <div class="mandom-footer-menu">
         <div class="mandom-footer-family">
           <strong>Family Site</strong>
-          <select name="" id="">
-            <option value="">GATSBY</option>
+          <select id="productSelect" onchange="navigateToPage()">
+            <option value="/w/gatsby/main.do">GATSBY</option>
+            <option value="/w/bifesta/main.do">BIFESTA</option>
+            <option value="/w/diane/main.do">DIANE</option>
+            <option value="/w/lucidol/main.do">LUCIDO-L</option>
+            <option value="/w/lucido/main.do">LUCIDO</option>
+            <option value="/w/dentalpro/main.do">DENTALPRO</option>
           </select>
+
+          <script>
+            function navigateToPage() {
+              var selectElement = document.getElementById('productSelect');
+              var selectedValue = selectElement.value;
+
+              if (selectedValue) {
+                window.location.href = selectedValue;
+              }
+            }
+          </script>
         </div>
         <div class="mandom-footer-sns">
           <a href="" class="mandom-footer-sns-facebook">페이스북</a>

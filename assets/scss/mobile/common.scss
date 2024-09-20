@@ -1,7 +1,6 @@
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
-@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
+// @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import './override';
-@import './icon';
 @mixin text-clamp($lines: 2, $line-height: false) {
   display: -webkit-box;
   overflow: hidden;
@@ -269,10 +268,14 @@
     z-index: 120;
     background-color: #fff;
     display: none;
+    overflow: auto;
+    background: #f8f8f8;
+
     &__close {
       display: flex;
       justify-content: flex-end;
       padding: 15px 20px;
+      background-color: #fff;
       button {
         width: 30px;
         height: 30px;
@@ -285,6 +288,7 @@
     &-head {
       padding: 0 20px 30px;
       border-bottom: 1px solid #f2f2f2;
+      background-color: #fff;
       h3 {
         color: #000;
         font-family: Pretendard;
@@ -308,6 +312,9 @@
         display: flex;
         gap: 10px;
         margin-top: 30px;
+        .btn {
+          border-radius: 100px;
+        }
       }
     }
     &-menu {
@@ -316,6 +323,7 @@
       justify-content: space-between;
       padding: 0 30px;
       border-bottom: 1px solid #f2f2f2;
+      background-color: #fff;
       a {
         display: block;
         padding: 20px 0;
@@ -340,6 +348,8 @@
         padding-bottom: 100px;
         background: #f8f8f8;
         height: calc(100vh - 315px);
+        height: -webkit-fill-available;
+        height: fill-available;
         overflow: auto;
         a {
           display: flex;
@@ -387,7 +397,9 @@
       &-2depth {
         padding: 0 30px 50px;
         width: 100%;
-        height: calc(100vh - 315px);
+        height: calc(100vh - 320px);
+        height: -webkit-fill-available;
+        height: fill-available;
         overflow: auto;
         > a {
           display: flex;
@@ -439,6 +451,68 @@
         }
       }
     }
+    &-category02 {
+      background-color: #fff;
+      &-depth {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+        padding: 20px;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #555;
+          font-family: Pretendard;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.07px;
+          &::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            background: url(../../images/mobile/menu-arrow.svg) no-repeat 50%
+              50%;
+          }
+          &.active {
+            color: #00909a;
+            font-family: Pretendard;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: -0.07px;
+          }
+        }
+      }
+      &-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+        padding: 20px 20px 60px 20px;
+        border-top: 1px solid #e8e8e8;
+        background: #f8f8f8;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          color: #999;
+          font-family: Pretendard;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.07px;
+        }
+      }
+    }
   }
 
   //components
@@ -482,6 +556,11 @@
       margin-right: 15px;
       border-radius: 8px;
       overflow: hidden;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
       img {
         position: relative;
         z-index: 10;
@@ -494,8 +573,8 @@
         position: absolute;
         right: 8px;
         bottom: 8px;
-        width: 30px;
-        height: 30px;
+        width: 30px !important;
+        height: 30px !important;
         background: rgba(0, 0, 0, 0.6)
           url(../../images/mobile/iconamoon_shopping-bag-thin.svg) no-repeat 50%
           50%;
@@ -587,6 +666,7 @@
       line-height: normal;
       letter-spacing: -0.06px;
       @include text-clamp(2, 12);
+      height: 28px;
     }
     &-price {
       del {
@@ -608,6 +688,7 @@
         letter-spacing: -0.07px;
         span {
           margin-right: 2px;
+          color: #ff5261;
         }
       }
     }
@@ -616,9 +697,11 @@
       flex-wrap: wrap;
       gap: 4px;
       margin-top: 9px;
+      height: 15px;
+      overflow: hidden;
     }
     &--soldout {
-      pointer-events: none;
+      //pointer-events: none;
     }
     &--soldout & {
       &-thumb {
@@ -810,6 +893,7 @@
             box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
             .mandom-product {
               display: block;
+              height: 332px;
               &-thumb {
                 width: 100%;
                 height: 180px;
@@ -1275,6 +1359,7 @@
         }
         select {
           appearance: none;
+          background: #fff;
           border: 0;
           color: #000;
           font-family: Pretendard;
@@ -1349,6 +1434,9 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 60px;
+      .btn {
+        border-radius: 100px;
+      }
     }
   }
   &-detail {
@@ -1502,11 +1590,15 @@
           font-weight: 700;
           line-height: normal;
           letter-spacing: -0.11px;
+          span {
+            color: #ff5261;
+          }
         }
       }
       &-review {
         display: flex;
         align-items: center;
+        gap: 8px;
         color: #00909a;
         font-family: Pretendard;
         font-size: 14px;
@@ -1542,6 +1634,22 @@
         gap: 5px;
         padding-top: 20px;
         border-top: 1px solid #f2f2f2;
+        span {
+          display: inline-flex;
+          align-items: center;
+          height: 20px;
+          padding: 0 7px;
+          border-radius: 10.5px;
+          border: 1px solid #e6e6e6;
+          background: #fff;
+          color: #999;
+          font-family: Pretendard;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.06px;
+        }
       }
     }
     &-pay {
