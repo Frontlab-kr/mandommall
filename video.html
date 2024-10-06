@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <base href="https://lottemars.edutor.io/" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0, maximum-scale=1.0,viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      property="og:title"
+      content="NEW 셀프계산대(SCO) 다른 결제 수단(모바일팝)"
+    />
+    <meta property="og:url" content="https://www.lotteins.co.kr/index2.jsp" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="신포스 메뉴얼" />
+
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <link href="/static/css/_common.css?v=20221110_3" rel="stylesheet" />
+    <script src="/static/js/jquery-3.6.1.min.js"></script>
+    <script src="/static/js/_common.js?v=20221017_1"></script>
+    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+    <script src="/static/js/videojs-dynamic-watermark.js"></script>
+  </head>
+
+  <body>
+    <div class="video-section">
+      <!-- video.js -->
+      <div class="vue-notification-template vue-notification success">
+        <!---->
+        <div class="notification-content"></div>
+      </div>
+      <video
+        id="myPlayer"
+        class="video-js container"
+        poster="https://divrmcq5yd534.cloudfront.net/lotte3.png"
+        style="height: 100%; width: 100%; outline: none"
+      ></video>
+      <!-- 20240924 -->
+      <div class="video-section-text">
+        <div class="video-section-text__title">
+          해외여행 여행자 보험에 대해 알아보자 해외여행 여행자 보험에 대해
+          알아보자 해외여행 여행자 보험에 대해 알아보자 해외여행 여행자 보험에
+          대해 알아보자 해외여행 여행자 보험에 대해 알아보자
+        </div>
+        <div class="video-section-text__hit">조회수 415회</div>
+      </div>
+      <style>
+        .video-section {
+          position: relative;
+          min-height: 100vh;
+          height: 100vh;
+        }
+        .video-section-text {
+          display: none;
+          position: absolute;
+          bottom: 40px;
+          left: 10px;
+          right: 10px;
+          padding: 10px;
+          border-radius: 4px;
+          background-color: rgba(0, 0, 0, 0.7);
+          z-index: 20;
+          color: #fff;
+          font-size: 12px;
+          line-height: 16px;
+        }
+        .video-section-text__title {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          max-height: 32px;
+        }
+        .video-section-text__hit {
+          margin-top: 10px;
+          font-size: 11px;
+        }
+        @media screen and (max-width: 960px) {
+          .video-section-text {
+            display: block;
+          }
+        }
+      </style>
+      <!-- //20240924 -->
+    </div>
+  </body>
+
+  <script>
+    var PROGRESS_INTERVAL = ''; // 진도 인터벌 변수
+    var PROGRESS_COUNT = 0; // 진도 인터벌 카우트 10 체크 카운트
+    var PLAYER; // player 객체
+    var PACKGE_INFO;
+    var PACKGE_CONTENTS_INFO;
+    var USER_PLAYER_LOG;
+    var IS_PROGRESS_COMPLETE = false;
+    var IS_PROGRESS_FIRST = true; //처음 플레이어 로딩시만 셋타임 5초시 진도 한번 날림, 그담부터는 그냥 10초
+    var FIRST_PLAY = true; //플레이어 처음 여부
+
+    $(document).ready(function () {
+      accessLog();
+    });
+
+    function accessLog() {
+      var packageUri = 's505icfjx46d';
+      var userId = '';
+      var userName = '';
+      var customerKey1 = '';
+      var customerKey2 = 's505icfjx46d';
+      var customerKey3 = '';
+      var data = {
+        packageUri: packageUri,
+        userId: userId,
+        userName: userName,
+        customerKey1: customerKey1,
+        customerKey2: customerKey2,
+        customerKey3: customerKey3,
+      };
+      var url = '/access/player/log';
+
+      _commonAjax(url, JSON.stringify(data), 'POST', function (returnData) {
+        PACKGE_INFO = returnData.data;
+        getContentsInfo();
+      });
+    }
+
+    function getContentsInfo() {
+      var packageNo = '2526';
+      var companyNo = '21';
+      var siteNo = '29';
+
+      var url = '/package/selectPackageContent';
+      var data = { packageNo: packageNo, companyNo: companyNo, siteNo: siteNo };
+
+      _commonAjax(url, JSON.stringify(data), 'POST', function (returnData) {
+        console.log('=============getContentsInfo====================');
+        //무적건 패키지 내에 한개의 컨텐츠만 사용하기로 협의됨
+        //패키지 내에 여러 컨텐츠는 고려되지 않음
+        if (returnData.data[0].length > 1) {
+          alert('패키지내에 여러개의 컨텐츠는 지원하지 않습니다.');
+          return false;
+        }
+
+        PACKGE_CONTENTS_INFO = returnData.data[0];
+
+        getUserProgress();
+      });
+    }
+
+    function getUserProgress() {
+      var packageNo = PACKGE_INFO.packageNo;
+      var userNo = PACKGE_INFO.userNo;
+      var companyNo = PACKGE_INFO.companyNo;
+      var siteNo = PACKGE_INFO.siteNo;
+      var url = '/accessContents/player/last/progress/log';
+      var data = {
+        packageNo: packageNo,
+        userNo: userNo,
+        companyNo: companyNo,
+        siteNo: siteNo,
+      };
+
+      _commonAjax(url, JSON.stringify(data), 'POST', function (returnData) {
+        USER_PLAYER_LOG = returnData.data;
+
+        playerLoad();
+      });
+    }
+
+    ////////////////////////////////////////////자체 동영상 플레이어/////////////////////////////////////////////////////
+
+    function playerLoad() {
+      //네이티브 모바일 터치 가능 여분
+      /*     var controlsForTouchTrueFalse = true;
+         if('Y' == "N"){
+             controlsForTouchTrueFalse=false;
+         }
+*/
+      PLAYER = videojs('myPlayer', {
+        sources: [
+          { src: PACKGE_CONTENTS_INFO.packageContentsUri, type: 'video/mp4' },
+        ],
+        // poster : PACKGE_CONTENTS_INFO.packageContentsThumPath,
+        controls: true,
+        playsinline: true,
+        //  nativeControlsForTouch : controlsForTouchTrueFalse,
+        // playToggle: false,
+        //muted : false,
+        //autoplay: true,
+        //preload : "auto",
+        playbackRates: [0.5, 1, 1.5, 2],
+        controlBar: {
+          pictureInPictureToggle: false,
+        },
+      });
+
+      if ('Y' == 'N') {
+        PLAYER.controlBar.progressControl.disable();
+        /* $('.vjs-progress-control').css("pointer-events","none")*/
+      }
+
+      //워터 마크 기능 개발
+      /*       var idDate = new Date();
+        var waterMarkText = ''+'('+''+')';
+         PLAYER.dynamicWatermark({
+            elementId: 'watermarkDiv',
+            watermarkText:'111',
+            changeDuration: 1000,
+            cssText:
+             "display: inline-block; color: red; background-color: transparent; font-size: 1rem;z-index: 9999; position: absolute;@media only screen and (max-width: 992px){ color: red; }"
+        });*/
+
+      //myPlayer.controlBar.progressControl.disable()
+
+      $('.vjs-big-play-button').hide();
+
+      PLAYER.on('ready', function (event) {
+        var duration = PACKGE_CONTENTS_INFO.packageContentsTotalPoint;
+        //console.log("duration  " + duration);
+        //console.log("lastPlayerViewPoint  " + USER_PLAYER_LOG.lastPlayerViewPoint);
+        //이어보기 적용
+        if (USER_PLAYER_LOG.lastPlayerViewPoint >= duration) {
+          //다본거임
+          PLAYER.currentTime(0);
+          IS_PROGRESS_COMPLETE = true;
+        } else {
+          PLAYER.currentTime(USER_PLAYER_LOG.lastPlayerViewPoint);
+        }
+      });
+
+      PLAYER.on('loadedmetadata', function (event) {
+        //console.log(event);
+
+        var promise = PLAYER.play();
+
+        if (promise !== undefined) {
+          promise
+            .then(function () {
+              // Autoplay started!
+              console.log('autoplay');
+            })
+            .catch(function (error) {
+              // Autoplay was prevented.
+              console.log('no autoplay');
+              $('.vjs-big-play-button').show();
+            });
+        }
+      });
+
+      PLAYER.on('play', function (event) {
+        console.log('play');
+        $('.vjs-big-play-button').hide();
+
+        /// 이어보기 토스트 추가
+        var duration = Number(PACKGE_CONTENTS_INFO.packageContentsTotalPoint);
+
+        //처음 플레이어 재생시만 족용 가능하도록 조치
+        if (FIRST_PLAY && USER_PLAYER_LOG.lastPlayerViewPoint > 0) {
+          FIRST_PLAY = false;
+          $('.notification-content').html('이어보기를 시작합니다.');
+          $('.vue-notification.success').show();
+          setTimeout(() => {
+            $('.vue-notification.success').hide();
+          }, '2000');
+        }
+
+        PROGRESS_INTERVAL = setInterval('progressCheck()', 1000);
+      });
+
+      PLAYER.on('pause', function (event) {
+        clearInterval(PROGRESS_INTERVAL); //진도 인터벌 삭제
+      });
+
+      PLAYER.on('seeked', function (event) {
+        console.log('seeked');
+      });
+
+      PLAYER.on('ended', function (event) {
+        console.log('ended');
+        //종료되었을때 최종 진도를 한번더 던진다.
+        var t = PLAYER.currentTime();
+        progressContents(
+          parseInt(PACKGE_CONTENTS_INFO.packageContentsTotalPoint),
+          function () {
+            //진도 인터벌 초기화
+            clearInterval(PROGRESS_INTERVAL); //진도 인터벌 삭제
+            PROGRESS_COUNT = 0; //진도 1초 카운트 초기화
+          }
+        );
+
+        $('.notification-content').html('시청을 완료하였습니다.');
+        $('.vue-notification.success').show();
+        setTimeout(() => {
+          $('.vue-notification.success').hide();
+        }, '2000');
+      });
+
+      PLAYER.on('timeupdate', function () {
+        var t = PLAYER.currentTime(); //0
+      });
+
+      //풀스크린 이벤트 체크 롯데손해봄 풀크린일때 가로 전화 함수 호출
+      //풀스크린 풀리면 세로고정 함수 호출
+      PLAYER.on('fullscreenchange', function (event) {
+        if (PLAYER.isFullscreen()) {
+          setLotteMarsAppLandscape();
+
+          console.log('fullscreen');
+        } else {
+          setLotteMarsAppPortrait();
+
+          console.log('nofullscreen');
+        }
+      });
+    }
+
+    ////////////////////////////////////////////진도 로직: START/////////////////////////////////////////////////////
+    function progressCheck() {
+      PROGRESS_COUNT = PROGRESS_COUNT + 1;
+
+      //플레이어 접속 했고 초기 5초 셋타임일때
+      if (IS_PROGRESS_FIRST == true && PROGRESS_COUNT >= 5) {
+        console.log('플레이어 처음 로딩시 5초에 진도 이력 저장');
+        IS_PROGRESS_FIRST = false;
+        PROGRESS_COUNT = 0; //다시 초기화
+        //진도 로직 추가
+        progressContents();
+      } else {
+        if (PROGRESS_COUNT >= 10) {
+          console.log('플레이어 처음 로딩 이후 10초에 진도 이력 저장');
+          PROGRESS_COUNT = 0; //다시 초기화
+          //진도 로직 추가
+          progressContents();
+        }
+      }
+    }
+
+    function progressContents(index, callback) {
+      //index 변수 받는 경우에 해당 변수로 ViewPoint 처리
+      //있는경우는 DOC 없는 경우는 VIDEO로 생각하면 됨
+      var url = '/accessContents/player/log';
+      var playerCurrentTime = PLAYER.currentTime();
+      var playerContentsViewPoint = _isEmpty(index) ? playerCurrentTime : index;
+      console.log('playerCurrentTime ===  ' + playerCurrentTime);
+      console.log('playerContentsViewPoint ===  ' + playerContentsViewPoint);
+
+      const videoLength = Math.floor(
+        PACKGE_CONTENTS_INFO.packageContentsTotalPoint
+      );
+
+      var data = {
+        packageNo: PACKGE_INFO.packageNo,
+        companyNo: PACKGE_INFO.companyNo,
+        siteNo: PACKGE_INFO.siteNo,
+        userNo: PACKGE_INFO.userNo,
+        packageContentsNo: PACKGE_CONTENTS_INFO.packageContentsNo,
+        playerAccessNo: PACKGE_INFO.playerAccessNo,
+        playerAccessSummeryNo: USER_PLAYER_LOG.playerAccessSummeryNo,
+        //playerContentsViewPoint: Math.round(getCurrentTime(true)).toFixed(), // 저작도구 크롭 시간 체크 일단 주석
+        playerContentsViewPoint: parseInt(playerContentsViewPoint),
+        //playerContentsViewPointOriginal: Math.round(getCurrentTime(false)).toFixed(),
+        playerContentsPoint: videoLength, //최종 수정된 영상 수정 시간
+      };
+
+      _commonAjax(url, JSON.stringify(data), 'POST', function (returnData) {
+        var customerKey1 = '';
+
+        //커스텀키가 존재하고 VOD 일 때만 콜백 태움
+        if (!_isEmpty(customerKey1)) {
+          sendProgressCallback(callback);
+        }
+      });
+    }
+
+    function sendProgressCallback(callback) {
+      var url = '/apiprogress/site/package/progress/send';
+      var data = {
+        sitePlayerCallbackUrl:
+          'https://www.getsmart.co.kr/apis/linkif-api/authoring/progress/receive',
+        packageNo: PACKGE_INFO.packageNo,
+        userNo: USER_PLAYER_LOG.userNo,
+      };
+
+      _commonAjax(url, JSON.stringify(data), 'POST', function (returnData) {
+        if (!_isEmpty(callback)) {
+          callback();
+        }
+      });
+    }
+
+    ////////////////////////////////////////////진도 로직: END/////////////////////////////////////////////////////
+  </script>
+
+  <style>
+    /*
+  .video-js .vjs-time-control{display:block;}
+  .video-js .vjs-remaining-time{display: none;}
+  .video-js .vjs-time-control{
+      padding-left:0;
+      padding-right:2px;
+  }
+  .video-js .vjs-time-divider{
+    min-width: initial !important;
+  }
+  .vjs-progress-control{
+   display:none !important;
+  }
+  */
+    .video-js .vjs-tech {
+      pointer-events: none;
+    }
+
+    .video-js .vjs-big-play-button {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* .video-js .vjs-watermark-content  img{
+
+    width:50px;
+
+}*/
+  </style>
+</html>

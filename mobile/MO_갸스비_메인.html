@@ -618,9 +618,10 @@
                     <iframe
                       width="560"
                       height="315"
-                      src="https://www.youtube.com/embed/aGVMT_Po_ug?si=jQG3BrqL825HL6WP"
+                      src="https://www.youtube.com/embed/aGVMT_Po_ug?enablejsapi=1&si=jQG3BrqL825HL6WP"
                       title="YouTube video player"
                       frameborder="0"
+                      class="youtubeVideo"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       referrerpolicy="strict-origin-when-cross-origin"
                       allowfullscreen
@@ -635,15 +636,26 @@
               <div class="swiper-button-pause"></div>
               <div class="swiper-button-play" style="display: none"></div>
             </div>
+            <script src="https://www.youtube.com/iframe_api"></script>
             <script>
               $(document).ready(function () {
                 var swiper04 = new Swiper('.mandom-main-tips .swiper', {
-                  autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                  },
+                  // autoplay: {
+                  //   delay: 4000,
+                  //   disableOnInteraction: false,
+                  // },
                   loop: true,
                   spaceBetween: 20,
+                  on: {
+                    slideChange: function () {
+                      $('.youtubeVideo')[0].contentWindow.postMessage(
+                        '{"event":"command","func":"' +
+                          'stopVideo' +
+                          '","args":""}',
+                        '*'
+                      );
+                    },
+                  },
                 });
               });
             </script>
@@ -668,7 +680,7 @@
           <div class="mandom-main-banner">
             <a href=""><img src="https://picsum.photos/335/100" alt="" /></a>
           </div>
-          <div class="mandom-main-product02">
+          <div class="mandom-main-product02" id="swiper01">
             <div class="mandom-main-product02__title">새봄 맞이 관리 해봄</div>
             <div class="mandom-main-product02-swiper">
               <div class="swiper">
@@ -679,26 +691,25 @@
               <div class="swiper-pagination"></div>
               <script>
                 $(document).ready(function () {
-                  $('.mandom-main-product02-swiper .swiper-slide').load(
-                    '../components/mobile/product.html',
-                    function () {
-                      // load가 완료된 후 실행할 코드
-                      var $html = $(
-                        '.mandom-main-product02-swiper .swiper-slide'
-                      )
-                        .first()
-                        .clone();
-                      var $row = $(
-                        '.mandom-main-product02-swiper  .swiper-wrapper'
-                      );
-                      for (var i = 1; i < 12; i++) {
-                        $row.append($html.clone());
-                      }
+                  $(
+                    '#swiper01 .mandom-main-product02-swiper .swiper-slide'
+                  ).load('../components/mobile/product.html', function () {
+                    // load가 완료된 후 실행할 코드
+                    var $html = $(
+                      '#swiper01 .mandom-main-product02-swiper .swiper-slide'
+                    )
+                      .first()
+                      .clone();
+                    var $row = $(
+                      '#swiper01 .mandom-main-product02-swiper  .swiper-wrapper'
+                    );
+                    for (var i = 1; i < 12; i++) {
+                      $row.append($html.clone());
                     }
-                  );
+                  });
                   setTimeout(() => {
                     var swiper05 = new Swiper(
-                      '.mandom-main-product02 .swiper',
+                      '#swiper01.mandom-main-product02 .swiper',
                       {
                         slidesPerView: 2,
                         grid: {
@@ -706,7 +717,53 @@
                         },
                         spaceBetween: 10,
                         pagination: {
-                          el: '.mandom-main-product02 .swiper-pagination',
+                          el: '#swiper01.mandom-main-product02 .swiper-pagination',
+                        },
+                      }
+                    );
+                  }, 1000);
+                });
+              </script>
+            </div>
+          </div>
+          <div
+            class="mandom-main-product02 mandom-main-product02--one"
+            id="swiper02"
+          >
+            <div class="mandom-main-product02__title">1단 대형</div>
+            <div class="mandom-main-product02-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"></div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <script>
+                $(document).ready(function () {
+                  $(
+                    '#swiper02 .mandom-main-product02-swiper .swiper-slide'
+                  ).load('../components/mobile/product.html', function () {
+                    // load가 완료된 후 실행할 코드
+                    var $html = $(
+                      '#swiper02 .mandom-main-product02-swiper .swiper-slide'
+                    )
+                      .first()
+                      .clone();
+                    var $row = $(
+                      '#swiper02 .mandom-main-product02-swiper  .swiper-wrapper'
+                    );
+                    for (var i = 1; i < 4; i++) {
+                      $row.append($html.clone());
+                    }
+                  });
+                  setTimeout(() => {
+                    var swiper06 = new Swiper(
+                      '#swiper02.mandom-main-product02 .swiper',
+                      {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        pagination: {
+                          el: '#swiper02.mandom-main-product02 .swiper-pagination',
                         },
                       }
                     );

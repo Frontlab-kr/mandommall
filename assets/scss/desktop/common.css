@@ -10,21 +10,6 @@ a {
   text-decoration: none;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  height: 24px;
-  padding: 0 8px;
-  border-radius: 6px;
-  color: #777;
-  font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.06px;
-}
-
 .swiper {
   width: 100%;
   height: 100%;
@@ -60,6 +45,22 @@ a {
 
 .me-2 {
   margin-right: 8px !important;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.fade:not(.show) {
+  opacity: 0;
+}
+
+.fade {
+  transition: opacity 0.15s linear;
+}
+
+.tab-content > .active {
+  display: block;
 }
 
 .mandom-header {
@@ -364,6 +365,7 @@ a {
 .mandom-footer {
   position: relative;
   z-index: 50;
+  margin-top: 40px;
   padding: 20px 0 80px 0;
   background: #fafafa;
 }
@@ -752,7 +754,25 @@ a {
   height: 24px;
   overflow: hidden;
 }
-.mandom-product--soldout .mandom-product-thumb::before {
+.mandom-product-badge .badge {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 6px;
+  color: #777;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.06px;
+}
+.mandom-product--soldout .mandom-product-thumb a:first-child {
+  width: 100%;
+  height: 100%;
+}
+.mandom-product--soldout .mandom-product-thumb a:first-child::before {
   content: "품절";
   display: flex;
   align-items: center;
@@ -802,6 +822,9 @@ a {
 .mandom-list.mandom-list--grid .mandom-product-title {
   margin-bottom: 15px;
 }
+.mandom-main {
+  padding-bottom: 30px;
+}
 .mandom-main-kv {
   position: relative;
   height: 650px;
@@ -818,12 +841,13 @@ a {
 .mandom-main-kv .swiper-pagination {
   display: flex;
   align-items: center;
+  justify-content: center;
   left: auto;
   right: 20px;
   bottom: 20px;
-  width: auto;
+  width: 42px;
   height: 20px;
-  padding: 0 8px;
+  padding: 0 0;
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.4);
 }
@@ -876,6 +900,7 @@ a {
   background: none;
 }
 .mandom-main-slide {
+  margin-bottom: 50px;
   padding: 100px 0 60px 0;
 }
 .mandom-main-slide__title {
@@ -940,6 +965,7 @@ a {
 }
 .mandom-main-recommend {
   padding: 100px 0 60px 0;
+  padding: 50px 0;
 }
 .mandom-main-recommend__title {
   margin-bottom: 50px;
@@ -961,7 +987,7 @@ a {
   padding: 0 10px;
 }
 .mandom-main-recommend-swiper .swiper-wrapper {
-  padding-bottom: 100px;
+  padding-bottom: 40px;
 }
 .mandom-main-recommend-swiper .swiper-slide {
   width: 315px !important;
@@ -975,7 +1001,7 @@ a {
   background: #00909a;
 }
 .mandom-main-recommend-swiper .swiper-scrollbar {
-  bottom: 40px;
+  bottom: 0;
   height: 2px;
 }
 .mandom-main-recommend-swiper .swiper-scrollbar-drag {
@@ -989,7 +1015,7 @@ a {
 }
 .mandom-main-product {
   position: relative;
-  padding: 110px 0;
+  padding: 50px 0;
   overflow: hidden;
 }
 .mandom-main-product__bg {
@@ -1048,8 +1074,8 @@ a {
 }
 .mandom-main-tips {
   position: relative;
-  height: 640px;
-  padding: 114px 20px 20px;
+  margin: 50px 0;
+  padding: 114px 20px 0;
 }
 .mandom-main-tips::before {
   content: "";
@@ -1150,6 +1176,7 @@ a {
 .mandom-main-tips-swiper {
   position: relative;
   z-index: 20;
+  height: 460px;
   margin-top: -200px;
 }
 .mandom-main-tips-swiper-item {
@@ -1182,7 +1209,7 @@ a {
   padding: 0 10px;
 }
 .mandom-main-banner {
-  margin: 0 20px;
+  padding: 50px 0;
 }
 .mandom-main-banner a {
   display: block;
@@ -1191,8 +1218,7 @@ a {
   width: 100%;
 }
 .mandom-main-product02 {
-  margin-bottom: 80px;
-  padding: 100px 0 60px 0;
+  padding: 50px 0;
 }
 .mandom-main-product02__title {
   margin-bottom: 50px;
@@ -1305,6 +1331,7 @@ a {
 .mandom-list {
   margin-top: 40px;
   margin-bottom: 60px;
+  min-height: 660px;
 }
 .mandom-list-head {
   display: flex;
@@ -1332,14 +1359,8 @@ a {
   display: flex;
   align-self: center;
 }
-.mandom-list-head__select:after {
-  content: "";
-  display: block;
-  width: 24px;
-  height: 24px;
-  background: url(../../images/desktop/select.svg) no-repeat 50% 50%;
-}
 .mandom-list-head__select select {
+  padding-right: 32px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -1351,6 +1372,7 @@ a {
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.07px;
+  background: url(../../images/desktop/select.svg) no-repeat 100% 50%;
 }
 .mandom-list-head__type {
   width: 24px;
@@ -1384,6 +1406,21 @@ a {
   align-items: center;
   justify-content: center;
   margin-bottom: 100px;
+}
+.mandom-list-button .btn {
+  max-width: 100%;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.08px;
 }
 .mandom-detail-head {
   display: flex;
@@ -1463,6 +1500,20 @@ a {
 .mandom-detail-info-badge {
   display: flex;
   gap: 5px;
+}
+.mandom-detail-info-badge .badge {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 6px;
+  color: #777;
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.06px;
 }
 .mandom-detail-info-button {
   display: flex;
@@ -1914,8 +1965,24 @@ a {
   background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
 }
+.mandom-detail-contents-more {
+  position: relative;
+  z-index: 20;
+}
 .mandom-detail-contents-more .btn {
   max-width: 100%;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.08px;
 }
 
 body[data-main=bifesta] .mandom-header-logo {

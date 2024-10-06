@@ -774,6 +774,10 @@
                     type: 'fraction',
                     clickable: true,
                   },
+                  navigation: {
+                    nextEl: '.mandom-main-kv .swiper-button-next',
+                    prevEl: '.mandom-main-kv .swiper-button-prev',
+                  },
                 });
                 $('.swiper-button-pause').click(function () {
                   $('.swiper-button-pause').hide();
@@ -959,9 +963,10 @@
                           <iframe
                             width="560"
                             height="315"
-                            src="https://www.youtube.com/embed/aGVMT_Po_ug?si=jQG3BrqL825HL6WP"
+                            src="https://www.youtube.com/embed/aGVMT_Po_ug?enablejsapi=1&autoplay=0&controls=1"
                             title="YouTube video player"
                             frameborder="0"
+                            class="youtubeVideo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin"
                             allowfullscreen
@@ -984,9 +989,10 @@
                           <iframe
                             width="560"
                             height="315"
-                            src="https://www.youtube.com/embed/aGVMT_Po_ug?si=jQG3BrqL825HL6WP"
+                            src="https://www.youtube.com/embed/aGVMT_Po_ug?enablejsapi=1&si=jQG3BrqL825HL6WP"
                             title="YouTube video player"
                             frameborder="0"
+                            class="youtubeVideo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin"
                             allowfullscreen
@@ -997,36 +1003,38 @@
                   </div>
                 </div>
               </div>
-
+              <script src="https://www.youtube.com/iframe_api"></script>
               <script>
                 $(document).ready(function () {
+                  // 제품 HTML을 로드
                   $('.mandom-main-tips__product').load(
                     '../components/desktop/product.html',
                     function () {
-                      // load가 완료된 후 실행할 코드
-                      // var $html = $('.mandom-main-tips-list-item')
-                      //   .first()
-                      //   .clone();
-                      // var $row = $('.mandom-main-tips-list');
-                      // for (var i = 1; i < 2; i++) {
-                      //   $row.append($html.clone());
-                      // }
+                      // 로드가 완료된 후 실행할 코드
                     }
                   );
-                  setTimeout(() => {
-                    var swiper04 = new Swiper(
-                      '.mandom-main-tips .swiper',
 
-                      {
-                        effect: 'fade',
-                        slidesPerView: 'auto',
-                        spaceBetween: 10,
-                        navigation: {
-                          nextEl: '.mandom-main-tips .swiper-button-next',
-                          prevEl: '.mandom-main-tips .swiper-button-prev',
+                  // 일정 시간 후에 Swiper 초기화
+                  setTimeout(() => {
+                    var swiper04 = new Swiper('.mandom-main-tips .swiper', {
+                      effect: 'fade',
+                      slidesPerView: 'auto',
+                      spaceBetween: 10,
+                      navigation: {
+                        nextEl: '.mandom-main-tips .swiper-button-next',
+                        prevEl: '.mandom-main-tips .swiper-button-prev',
+                      },
+                      on: {
+                        slideChange: function () {
+                          $('.youtubeVideo')[0].contentWindow.postMessage(
+                            '{"event":"command","func":"' +
+                              'stopVideo' +
+                              '","args":""}',
+                            '*'
+                          );
                         },
-                      }
-                    );
+                      },
+                    });
                   }, 1000);
                 });
               </script>
@@ -1035,6 +1043,56 @@
           <div class="mandom-inner">
             <div class="mandom-main-banner">
               <a href=""><img src="https://picsum.photos/1320/185" alt="" /></a>
+            </div>
+          </div>
+          <div class="mandom-inner">
+            <div class="mandom-main-product02">
+              <div class="mandom-main-product02__title">
+                습한 장마철 땀 산뜻하고 간편한 대비
+              </div>
+              <div class="mandom-main-product02-swiper">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"></div>
+                  </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+                <script>
+                  $(document).ready(function () {
+                    $('.mandom-main-product02-swiper .swiper-slide').load(
+                      '../components/desktop/product.html',
+                      function () {
+                        // load가 완료된 후 실행할 코드
+                        var $html = $(
+                          '.mandom-main-product02-swiper .swiper-slide'
+                        )
+                          .first()
+                          .clone();
+                        var $row = $(
+                          '.mandom-main-product02-swiper  .swiper-wrapper'
+                        );
+                        for (var i = 1; i < 12; i++) {
+                          $row.append($html.clone());
+                        }
+                      }
+                    );
+                    setTimeout(() => {
+                      var swiper04 = new Swiper(
+                        '.mandom-main-product02 .swiper',
+
+                        {
+                          slidesPerView: 'auto',
+                          spaceBetween: 20,
+                          scrollbar: {
+                            el: '.mandom-main-product02 .swiper-scrollbar',
+                            draggable: true,
+                          },
+                        }
+                      );
+                    }, 1000);
+                  });
+                </script>
+              </div>
             </div>
           </div>
           <div class="mandom-inner">

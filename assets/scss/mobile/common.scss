@@ -73,7 +73,7 @@
   &-footer {
     position: relative;
     z-index: 30;
-    padding: 20px 20px 160px 20px;
+    padding: 20px 20px 80px 20px;
     background: #fafafa;
     &-link {
       display: flex;
@@ -699,26 +699,46 @@
       margin-top: 9px;
       height: 15px;
       overflow: hidden;
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        height: 15px;
+        padding: 0 3px;
+        border-radius: 3px;
+        color: #777;
+        font-family: Pretendard;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.05px;
+      }
     }
     &--soldout {
       //pointer-events: none;
     }
     &--soldout & {
       &-thumb {
-        &::before {
-          content: '품절';
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background: rgba(0, 0, 0, 0.5);
-          z-index: 20;
-          font-size: 20px;
-          color: #fff;
+        a {
+          &:first-child {
+            width: 100%;
+            height: 100%;
+            &::before {
+              content: '품절';
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background: rgba(0, 0, 0, 0.5);
+              z-index: 20;
+              font-size: 20px;
+              color: #fff;
+            }
+          }
         }
       }
     }
@@ -764,6 +784,7 @@
 
   //page
   &-main {
+    padding-bottom: 60px;
     &-kv {
       .swiper {
         &-slide {
@@ -784,12 +805,13 @@
         &-pagination {
           display: flex;
           align-items: center;
+          justify-content: center;
           left: auto;
           right: 20px;
           bottom: 20px;
-          width: auto;
+          width: 42px;
           height: 20px;
-          padding: 0 8px;
+          padding: 0 0;
           border-radius: 20px;
           background: rgba(0, 0, 0, 0.4);
           &-fraction {
@@ -811,7 +833,7 @@
         }
         &-button-pause {
           position: absolute;
-          right: 63px;
+          right: 66px;
           bottom: 20px;
           z-index: 30;
           width: 20px;
@@ -863,6 +885,7 @@
           line-height: normal;
           letter-spacing: -0.06px;
           text-align: center;
+          word-break: keep-all;
         }
       }
     }
@@ -954,6 +977,7 @@
         letter-spacing: -0.12px;
         text-align: left;
         color: #000;
+        word-break: keep-all;
       }
       &-list {
         &-item {
@@ -1001,7 +1025,7 @@
     &-product,
     &-product02 {
       padding: 20px;
-      padding-bottom: 80px;
+      padding-bottom: 20px;
       width: 100%;
       &__title {
         margin-bottom: 30px;
@@ -1018,7 +1042,7 @@
         position: relative;
         width: 100%;
         height: 0;
-        padding-top: calc(100% + 294px);
+        padding-top: calc(100% + 160px);
         .mandom-product {
           display: block;
           &-thumb {
@@ -1043,9 +1067,26 @@
           left: 0;
           &-pagination {
             display: flex;
+            justify-content: center;
             left: 0;
             right: 0;
-            bottom: -30px;
+            bottom: -10px;
+            width: auto;
+          }
+        }
+      }
+      &:not(.mandom-main-product02--one) & {
+        &-swiper {
+          padding-top: calc(100% + 294px);
+        }
+      }
+      &:not(.mandom-main-product02--one) {
+        .swiper {
+          &-pagination {
+            display: flex;
+            left: 0;
+            right: 0;
+            bottom: -10px;
             width: auto;
             &-bullet {
               width: 100%;
@@ -1056,6 +1097,55 @@
               border-radius: 0;
               &-active {
                 background: #000;
+              }
+            }
+          }
+        }
+      }
+      &--one {
+        &-swiper {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-top: calc(100% + 10px);
+          .mandom-product {
+            display: block;
+            &-thumb {
+              position: relative;
+              width: 100%;
+              height: 0;
+              padding-top: 100%;
+              img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+              }
+            }
+          }
+          .swiper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            &-pagination {
+              display: flex;
+              left: 0;
+              right: 0;
+              bottom: -10px;
+              width: auto;
+              &-bullet {
+                width: 100%;
+                height: 1px;
+                margin: 0 !important;
+                opacity: 1;
+                background: #fff;
+                border-radius: 0;
+                &-active {
+                  background: #000;
+                }
               }
             }
           }
@@ -1349,17 +1439,11 @@
         display: flex;
         align-self: center;
         margin-right: 20px;
-        &:after {
-          content: '';
-          display: block;
-          width: 24px;
-          height: 24px;
-          background: url(../../images/mobile/iconamoon_arrow-up-2-thin.svg)
-            no-repeat 50% 50%;
-        }
+
         select {
           appearance: none;
           background: #fff;
+          padding-right: 24px;
           border: 0;
           color: #000;
           font-family: Pretendard;
@@ -1368,6 +1452,8 @@
           font-weight: 400;
           line-height: normal;
           letter-spacing: -0.07px;
+          background: url(../../images/mobile/iconamoon_arrow-up-2-thin.svg)
+            no-repeat 100% 50%;
         }
       }
       &__type {
@@ -1494,6 +1580,20 @@
       &-badge {
         display: flex;
         gap: 4px;
+        .badge {
+          display: inline-flex;
+          align-items: center;
+          height: 15px;
+          padding: 0 3px;
+          border-radius: 3px;
+          color: #777;
+          font-family: Pretendard;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.05px;
+        }
       }
       &-button {
         display: flex;
@@ -1729,6 +1829,14 @@
 }
 body {
   padding-top: 60px;
+  &[data-main='gatsby'],
+  &[data-main='bifesta'],
+  &[data-main='lucidol'],
+  &[data-main='diane'] {
+    .header-main .main-logo a:after {
+      display: none;
+    }
+  }
   &[data-main='bifesta'] {
     .mandom {
       &-header {

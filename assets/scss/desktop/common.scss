@@ -331,6 +331,7 @@
   &-footer {
     position: relative;
     z-index: 50;
+    margin-top: 40px;
     padding: 20px 0 80px 0;
     background: #fafafa;
     &-head {
@@ -727,26 +728,46 @@
       margin-top: 12px;
       height: 24px;
       overflow: hidden;
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        height: 24px;
+        padding: 0 8px;
+        border-radius: 6px;
+        color: #777;
+        font-family: Pretendard;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.06px;
+      }
     }
     &--soldout {
       //pointer-events: none;
     }
     &--soldout & {
       &-thumb {
-        &::before {
-          content: '품절';
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background: rgba(0, 0, 0, 0.5);
-          z-index: 20;
-          font-size: 20px;
-          color: #fff;
+        a {
+          &:first-child {
+            width: 100%;
+            height: 100%;
+            &::before {
+              content: '품절';
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background: rgba(0, 0, 0, 0.5);
+              z-index: 20;
+              font-size: 20px;
+              color: #fff;
+            }
+          }
         }
       }
     }
@@ -795,6 +816,7 @@
 
   //page
   &-main {
+    padding-bottom: 30px;
     &-kv {
       position: relative;
       height: 650px;
@@ -810,12 +832,13 @@
         &-pagination {
           display: flex;
           align-items: center;
+          justify-content: center;
           left: auto;
           right: 20px;
           bottom: 20px;
-          width: auto;
+          width: 42px;
           height: 20px;
-          padding: 0 8px;
+          padding: 0 0;
           border-radius: 20px;
           background: rgba(0, 0, 0, 0.4);
           &-fraction {
@@ -875,6 +898,7 @@
     }
 
     &-slide {
+      margin-bottom: 50px;
       padding: 100px 0 60px 0;
       &__title {
         margin-bottom: 50px;
@@ -946,6 +970,7 @@
     }
     &-recommend {
       padding: 100px 0 60px 0;
+      padding: 50px 0;
       &__title {
         margin-bottom: 50px;
         color: #000;
@@ -964,7 +989,7 @@
           margin: 0 -10px;
           padding: 0 10px;
           &-wrapper {
-            padding-bottom: 100px;
+            padding-bottom: 40px;
           }
           &-slide {
             width: 315px !important;
@@ -980,7 +1005,7 @@
             }
           }
           &-scrollbar {
-            bottom: 40px;
+            bottom: 0;
             height: 2px;
             &-drag {
               background-color: #000;
@@ -1008,7 +1033,7 @@
     // }
     &-product {
       position: relative;
-      padding: 110px 0;
+      padding: 50px 0;
       overflow: hidden;
       &__bg {
         position: absolute;
@@ -1067,10 +1092,16 @@
         }
       }
     }
+    // &-product + .mandom-main-recommend {
+    //   padding-top: 0;
+    // }
+    // &-product + .mandom-main-tips {
+    //   margin-top: -80px;
+    // }
     &-tips {
       position: relative;
-      height: 640px;
-      padding: 114px 20px 20px;
+      margin: 50px 0;
+      padding: 114px 20px 0;
       &::before {
         content: '';
         display: block;
@@ -1169,6 +1200,7 @@
       &-swiper {
         position: relative;
         z-index: 20;
+        height: 460px;
         margin-top: -200px;
         &-item {
           display: flex;
@@ -1202,7 +1234,7 @@
       }
     }
     &-banner {
-      margin: 0 20px;
+      padding: 50px 0;
       a {
         display: block;
       }
@@ -1211,8 +1243,7 @@
       }
     }
     &-product02 {
-      margin-bottom: 80px;
-      padding: 100px 0 60px 0;
+      padding: 50px 0;
       &__title {
         margin-bottom: 50px;
         color: #000;
@@ -1333,6 +1364,7 @@
   &-list {
     margin-top: 40px;
     margin-bottom: 60px;
+    min-height: 660px;
     &-head {
       display: flex;
       align-items: center;
@@ -1357,14 +1389,8 @@
       &__select {
         display: flex;
         align-self: center;
-        &:after {
-          content: '';
-          display: block;
-          width: 24px;
-          height: 24px;
-          background: url(../../images/desktop/select.svg) no-repeat 50% 50%;
-        }
         select {
+          padding-right: 32px;
           appearance: none;
           border: 0;
           color: #000;
@@ -1374,6 +1400,7 @@
           font-weight: 400;
           line-height: normal;
           letter-spacing: -0.07px;
+          background: url(../../images/desktop/select.svg) no-repeat 100% 50%;
         }
       }
       &__type {
@@ -1412,6 +1439,21 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 100px;
+      .btn {
+        max-width: 100%;
+        width: 100%;
+        height: 60px;
+        border-radius: 30px;
+        border: 1px solid #ccc;
+        background: #fff;
+        color: #000;
+        font-family: Pretendard;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.08px;
+      }
     }
   }
   &-detail {
@@ -1497,6 +1539,20 @@
       &-badge {
         display: flex;
         gap: 5px;
+        .badge {
+          display: inline-flex;
+          align-items: center;
+          height: 24px;
+          padding: 0 8px;
+          border-radius: 6px;
+          color: #777;
+          font-family: Pretendard;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.06px;
+        }
       }
       &-button {
         display: flex;
@@ -1963,8 +2019,22 @@
         }
       }
       &-more {
+        position: relative;
+        z-index: 20;
         .btn {
           max-width: 100%;
+          width: 100%;
+          height: 60px;
+          border-radius: 30px;
+          border: 1px solid #ccc;
+          background: #fff;
+          color: #000;
+          font-family: Pretendard;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.08px;
         }
       }
     }
