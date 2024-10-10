@@ -1183,6 +1183,7 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  justify-content: flex-end;
 }
 .mandom-main-tips-swiper-item .mandom-product {
   display: flex;
