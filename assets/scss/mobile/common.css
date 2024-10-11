@@ -1095,8 +1095,11 @@ a {
 .mandom-main-product--one .mandom-main-product-swiper, .mandom-main-product--one .mandom-main-product02-swiper, .mandom-main-product02--one .mandom-main-product-swiper, .mandom-main-product02--one .mandom-main-product02-swiper {
   position: relative;
   width: 100%;
-  height: 0;
-  padding-top: calc(100% + 150px) !important;
+  height: auto;
+  padding: 0 0 20px 0;
+}
+.mandom-main-product--one .mandom-main-product-swiper .swiper, .mandom-main-product--one .mandom-main-product02-swiper .swiper, .mandom-main-product02--one .mandom-main-product-swiper .swiper, .mandom-main-product02--one .mandom-main-product02-swiper .swiper {
+  position: relative;
 }
 .mandom-main-product--one .mandom-main-product-swiper .mandom-product, .mandom-main-product--one .mandom-main-product02-swiper .mandom-product, .mandom-main-product02--one .mandom-main-product-swiper .mandom-product, .mandom-main-product02--one .mandom-main-product02-swiper .mandom-product {
   display: block;
@@ -1108,28 +1111,6 @@ a {
   padding-top: 100%;
 }
 .mandom-main-product--one .mandom-main-product-swiper .mandom-product-thumb img, .mandom-main-product--one .mandom-main-product02-swiper .mandom-product-thumb img, .mandom-main-product02--one .mandom-main-product-swiper .mandom-product-thumb img, .mandom-main-product02--one .mandom-main-product02-swiper .mandom-product-thumb img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.mandom-main-product--two .mandom-main-product-swiper, .mandom-main-product--two .mandom-main-product02-swiper, .mandom-main-product02--two .mandom-main-product-swiper, .mandom-main-product02--two .mandom-main-product02-swiper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: calc(100% - 20px) !important;
-}
-.mandom-main-product--two .mandom-main-product-swiper .mandom-product, .mandom-main-product--two .mandom-main-product02-swiper .mandom-product, .mandom-main-product02--two .mandom-main-product-swiper .mandom-product, .mandom-main-product02--two .mandom-main-product02-swiper .mandom-product {
-  display: block;
-}
-.mandom-main-product--two .mandom-main-product-swiper .mandom-product-thumb, .mandom-main-product--two .mandom-main-product02-swiper .mandom-product-thumb, .mandom-main-product02--two .mandom-main-product-swiper .mandom-product-thumb, .mandom-main-product02--two .mandom-main-product02-swiper .mandom-product-thumb {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: 100%;
-}
-.mandom-main-product--two .mandom-main-product-swiper .mandom-product-thumb img, .mandom-main-product--two .mandom-main-product02-swiper .mandom-product-thumb img, .mandom-main-product02--two .mandom-main-product-swiper .mandom-product-thumb img, .mandom-main-product02--two .mandom-main-product02-swiper .mandom-product-thumb img {
   position: absolute;
   top: 0;
   right: 0;
