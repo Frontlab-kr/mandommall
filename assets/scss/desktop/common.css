@@ -65,7 +65,7 @@ a {
 
 .mandom-header {
   position: relative;
-  z-index: 60;
+  z-index: 70;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -643,6 +643,12 @@ a {
   position: relative;
   width: 315px;
 }
+.mandom-product:hover .mandom-product-thumb img {
+  opacity: 0;
+}
+.mandom-product:hover .mandom-product-thumb img.img-extra {
+  opacity: 1;
+}
 .mandom-product-thumb {
   position: relative;
   min-width: 315px;
@@ -658,6 +664,16 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 0.2s ease;
+}
+.mandom-product-thumb img.img-extra {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 0;
 }
 .mandom-product-thumb__cart {
   display: block;
@@ -822,21 +838,35 @@ a {
 .mandom-list.mandom-list--grid .mandom-product-title {
   margin-bottom: 15px;
 }
-.mandom-main {
-  padding-bottom: 30px;
-}
 .mandom-main-kv {
   position: relative;
   height: 650px;
 }
 .mandom-main-kv .swiper-slide {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mandom-main-kv .swiper-slide .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 500px;
+  z-index: 10;
+}
+.mandom-main-kv .swiper-slide .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 500px;
+  z-index: 10;
 }
 .mandom-main-kv .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  position: relative;
+  z-index: 20;
 }
 .mandom-main-kv .swiper-pagination {
   display: flex;
@@ -885,7 +915,7 @@ a {
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  background: #f60 url(../../images/desktop/main-kv-pause.svg) no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.4) url(../../images/desktop/main-kv-play.svg) no-repeat 50% 50%;
 }
 .mandom-main-kv .mandom-inner {
   position: absolute;
@@ -900,7 +930,6 @@ a {
   background: none;
 }
 .mandom-main-slide {
-  margin-bottom: 50px;
   padding: 100px 0 60px 0;
 }
 .mandom-main-slide__title {
@@ -1072,8 +1101,12 @@ a {
 .mandom-main-product-swiper .swiper-scrollbar-drag {
   background-color: #fff;
 }
+.mandom-main-product + .mandom-main-tips {
+  margin-top: 0px;
+}
 .mandom-main-tips {
   position: relative;
+  height: 618px;
   margin: 50px 0;
   padding: 114px 20px 0;
 }
@@ -1102,6 +1135,7 @@ a {
 .mandom-main-tips__text {
   position: relative;
   z-index: 20;
+  height: 72px;
   color: #fff;
   font-family: Pretendard;
   font-size: 30px;
@@ -1116,6 +1150,7 @@ a {
   display: flex;
   gap: 10px;
   margin-top: 56px;
+  height: 45px;
 }
 .mandom-main-tips__button .swiper-button-next,
 .mandom-main-tips__button .swiper-button-prev {
@@ -1123,7 +1158,7 @@ a {
   margin: 0;
   width: 45px;
   height: 45px;
-  background: url(../../images/desktop/tips-button.svg) no-repeat 50% 50%;
+  background: url(../../images/desktop/tips-button-black.svg) no-repeat 50% 50%;
   cursor: pointer;
 }
 .mandom-main-tips__button .swiper-button-next::after,
@@ -1175,7 +1210,7 @@ a {
 }
 .mandom-main-tips-swiper {
   position: relative;
-  z-index: 20;
+  z-index: 10;
   height: 460px;
   margin-top: -200px;
 }
@@ -1184,6 +1219,7 @@ a {
   align-items: flex-end;
   justify-content: space-between;
   justify-content: flex-end;
+  height: 437px;
 }
 .mandom-main-tips-swiper-item .mandom-product {
   display: flex;
@@ -1359,8 +1395,14 @@ a {
 .mandom-list-head__select {
   display: flex;
   align-self: center;
+  position: relative;
+  z-index: 30;
 }
 .mandom-list-head__select select {
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  height: 24px;
   padding-right: 32px;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1374,6 +1416,56 @@ a {
   line-height: normal;
   letter-spacing: -0.07px;
   background: url(../../images/desktop/select.svg) no-repeat 100% 50%;
+  cursor: pointer;
+}
+.mandom-list-head__select strong {
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  height: 24px;
+  padding-right: 32px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.07px;
+  background: url(../../images/desktop/select.svg) no-repeat 100% 50%;
+  cursor: pointer;
+}
+.mandom-list-head__select.active .mandom-list-head__select-layer {
+  display: block;
+}
+.mandom-list-head__select-layer {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  left: 0;
+  display: none;
+}
+.mandom-list-head__select-layer-inner {
+  padding: 4px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+.mandom-list-head__select-layer a {
+  display: block;
+  padding: 6px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.07px;
+}
+.mandom-list-head__select-layer a:hover {
+  background-color: #eee;
 }
 .mandom-list-head__type {
   width: 24px;
@@ -1410,7 +1502,7 @@ a {
 }
 .mandom-list-button .btn {
   max-width: 100%;
-  width: 100%;
+  width: 200px;
   height: 60px;
   border-radius: 30px;
   border: 1px solid #ccc;
@@ -1972,7 +2064,7 @@ a {
 }
 .mandom-detail-contents-more .btn {
   max-width: 100%;
-  width: 100%;
+  width: 200px;
   height: 60px;
   border-radius: 30px;
   border: 1px solid #ccc;
@@ -1986,6 +2078,11 @@ a {
   letter-spacing: -0.08px;
 }
 
+body[data-main=gatsby] .mandom-main-tips .mandom-main-tips__button .swiper-button-prev,
+body[data-main=gatsby] .mandom-main-tips .mandom-main-tips__button .swiper-button-next {
+  background: url(../../images/desktop/tips-button.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
 body[data-main=bifesta] .mandom-header-logo {
   width: 90px;
   height: 34px;

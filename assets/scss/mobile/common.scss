@@ -73,6 +73,7 @@
   &-footer {
     position: relative;
     z-index: 30;
+    margin-top: 40px;
     padding: 20px 20px 80px 20px;
     background: #fafafa;
     &-link {
@@ -88,6 +89,38 @@
         font-weight: 400;
         line-height: normal;
         letter-spacing: -0.06px;
+      }
+    }
+    &-select {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0 20px 0;
+      strong {
+        margin-right: 16px;
+        color: #000;
+        font-family: Pretendard;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.07px;
+      }
+      select {
+        appearance: none;
+        background: #fff;
+        padding: 4px 24px 4px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #000;
+        font-family: Pretendard;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.07px;
+        background: #fff url(../../images/mobile/iconamoon_arrow-up-2-thin.svg)
+          no-repeat 100% 50%;
       }
     }
     &-agree {
@@ -784,7 +817,7 @@
 
   //page
   &-main {
-    padding-bottom: 60px;
+    padding-bottom: 0;
     &-kv {
       .swiper {
         &-slide {
@@ -845,21 +878,22 @@
         }
         &-button-play {
           position: absolute;
-          right: 63px;
+          right: 66px;
           bottom: 20px;
           z-index: 30;
           width: 20px;
           height: 20px;
           border-radius: 20px;
 
-          background: #f60 url(../../images/mobile/main-kv-pause.svg) no-repeat
-            50% 50%;
+          background: rgba(0, 0, 0, 0.4)
+            url(../../images/mobile/main-kv-play.svg) no-repeat 50% 50%;
         }
       }
     }
     &-menu {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 20px;
       padding: 20px;
       border-bottom: 1px solid #f2f2f2;
       a {
@@ -889,8 +923,11 @@
         }
       }
     }
+    &-menu + .mandom-main-product02 {
+      padding-top: 20px;
+    }
     &-slide {
-      padding: 20px 0 0 0;
+      //padding: 20px 0 0 0;
       &__title {
         padding: 20px 20px 30px 20px;
         color: #000;
@@ -900,6 +937,7 @@
         font-weight: 700;
         line-height: normal;
         letter-spacing: -0.12px;
+        word-break: keep-all;
       }
       &-swiper {
         position: relative;
@@ -907,7 +945,8 @@
         .swiper {
           // margin: 0 -30px;
           &-wrapper {
-            padding-bottom: 86px;
+            padding: 0 60px 0 20px;
+            padding-bottom: 80px;
           }
           &-slide {
             width: 187px;
@@ -933,7 +972,7 @@
             }
           }
           &-pagination {
-            bottom: 44px;
+            bottom: 40px;
             &-bullet {
               width: 6px;
               height: 6px;
@@ -966,18 +1005,16 @@
       }
     }
     &-recommend {
-      padding: 50px 20px;
+      padding: 40px 20px;
       &__title {
         margin-bottom: 30px;
+        color: #000;
+        font-family: Pretendard;
         font-size: 24px;
-        font-weight: bold;
-        font-stretch: normal;
         font-style: normal;
+        font-weight: 700;
         line-height: normal;
         letter-spacing: -0.12px;
-        text-align: left;
-        color: #000;
-        word-break: keep-all;
       }
       &-list {
         &-item {
@@ -1024,12 +1061,11 @@
     // }
     &-product,
     &-product02 {
-      padding: 20px;
-      padding-bottom: 20px;
+      padding: 40px 20px;
       width: 100%;
       &__title {
         margin-bottom: 30px;
-        padding-top: 30px;
+        //padding-top: 30px;
         color: #000;
         font-family: Pretendard;
         font-size: 24px;
@@ -1037,6 +1073,7 @@
         font-weight: 700;
         line-height: normal;
         letter-spacing: -0.12px;
+        word-break: keep-all;
       }
       &-swiper {
         position: relative;
@@ -1101,9 +1138,12 @@
           position: relative;
           width: 100%;
           height: auto;
-          padding: 0 0 20px 0;
+          padding: 0 0 40px 0;
           .swiper {
             position: relative;
+            &-pagination {
+              bottom: 0;
+            }
           }
           .mandom-product {
             display: block;
@@ -1124,9 +1164,13 @@
         }
       }
     }
+    &-product02 + &-product02 {
+      padding-top: 20px;
+    }
     &-tips {
       position: relative;
-      padding: 40px 20px 20px;
+      margin: 0;
+      padding: 40px 20px;
       &::before {
         content: '';
         display: block;
@@ -1141,10 +1185,38 @@
         background-size: cover;
         z-index: 10;
       }
+      &-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      &__nav {
+        position: relative;
+        z-index: 30;
+        display: flex;
+        gap: 8px;
+        .swiper-button-next,
+        .swiper-button-prev {
+          position: static;
+          margin: 0;
+          width: 30px;
+          height: 30px;
+          background: url(../../images/desktop/tips-button.svg) no-repeat 50%
+            50%;
+          background-size: cover;
+          cursor: pointer;
+          &::after {
+            display: none;
+          }
+        }
+        .swiper-button-prev {
+          transform: rotate(180deg);
+        }
+      }
       &__title {
         position: relative;
         z-index: 20;
-        margin-bottom: 30px;
         color: #fff;
         font-family: Pretendard;
         font-size: 24px;
@@ -1211,7 +1283,7 @@
       }
     }
     &-banner {
-      margin: 0 20px;
+      margin: 20px 20px;
       a {
         display: block;
       }
@@ -1491,7 +1563,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 60px;
+      margin-bottom: 0;
       .btn {
         border-radius: 100px;
       }
@@ -1795,6 +1867,10 @@
       }
       .tab-content {
         padding: 0;
+        .tab-pane#tab01,
+        .tab-pane#tab02 {
+          //padding: 0 0 40px 0;
+        }
         .tab-pane#tab03,
         .tab-pane#tab04 {
           padding: 30px 20px;
@@ -1858,6 +1934,14 @@ body {
         }
 
         &-tips {
+          .mandom-main-tips__nav {
+            .swiper-button-prev,
+            .swiper-button-next {
+              background: url(../../images/desktop/tips-button-black.svg)
+                no-repeat 50% 50%;
+              background-size: cover;
+            }
+          }
           &::before {
             background: #ffeab1
               url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50%
@@ -1922,6 +2006,14 @@ body {
         }
 
         &-tips {
+          .mandom-main-tips__nav {
+            .swiper-button-prev,
+            .swiper-button-next {
+              background: url(../../images/desktop/tips-button-black.svg)
+                no-repeat 50% 50%;
+              background-size: cover;
+            }
+          }
           &::before {
             background: #ffedf7
               url(../../images/mobile/lucidol/main-tips-bg.svg) no-repeat 50%
@@ -1985,6 +2077,14 @@ body {
         }
 
         &-tips {
+          .mandom-main-tips__nav {
+            .swiper-button-prev,
+            .swiper-button-next {
+              background: url(../../images/desktop/tips-button-black.svg)
+                no-repeat 50% 50%;
+              background-size: cover;
+            }
+          }
           &::before {
             background: #fff9ed url(../../images/mobile/diane/main-tips-bg.svg)
               no-repeat 50% 50%;
@@ -2047,6 +2147,14 @@ body {
         }
 
         &-tips {
+          .mandom-main-tips__nav {
+            .swiper-button-prev,
+            .swiper-button-next {
+              background: url(../../images/desktop/tips-button-black.svg)
+                no-repeat 50% 50%;
+              background-size: cover;
+            }
+          }
           &::before {
             background: #edf7ff url(../../images/mobile/lucido/main-tips-bg.svg)
               no-repeat 50% 50%;
@@ -2110,6 +2218,14 @@ body {
         }
 
         &-tips {
+          .mandom-main-tips__nav {
+            .swiper-button-prev,
+            .swiper-button-next {
+              background: url(../../images/desktop/tips-button-black.svg)
+                no-repeat 50% 50%;
+              background-size: cover;
+            }
+          }
           &::before {
             background: #ffeded
               url(../../images/mobile/dentalpro/main-tips-bg.svg) no-repeat 50%

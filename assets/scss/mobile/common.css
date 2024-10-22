@@ -123,6 +123,7 @@ a {
 .mandom-footer {
   position: relative;
   z-index: 30;
+  margin-top: 40px;
   padding: 20px 20px 80px 20px;
   background: #fafafa;
 }
@@ -140,6 +141,39 @@ a {
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.06px;
+}
+.mandom-footer-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 20px 0;
+}
+.mandom-footer-select strong {
+  margin-right: 16px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.07px;
+}
+.mandom-footer-select select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #fff;
+  padding: 4px 24px 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.07px;
+  background: #fff url(../../images/mobile/iconamoon_arrow-up-2-thin.svg) no-repeat 100% 50%;
 }
 .mandom-footer-agree button {
   display: flex;
@@ -812,7 +846,7 @@ a {
   margin-bottom: 2px;
 }
 .mandom-main {
-  padding-bottom: 60px;
+  padding-bottom: 0;
 }
 .mandom-main-kv .swiper-slide {
   position: relative;
@@ -871,17 +905,18 @@ a {
 }
 .mandom-main-kv .swiper-button-play {
   position: absolute;
-  right: 63px;
+  right: 66px;
   bottom: 20px;
   z-index: 30;
   width: 20px;
   height: 20px;
   border-radius: 20px;
-  background: #f60 url(../../images/mobile/main-kv-pause.svg) no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.4) url(../../images/mobile/main-kv-play.svg) no-repeat 50% 50%;
 }
 .mandom-main-menu {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
   padding: 20px;
   border-bottom: 1px solid #f2f2f2;
 }
@@ -911,8 +946,8 @@ a {
   text-align: center;
   word-break: keep-all;
 }
-.mandom-main-slide {
-  padding: 20px 0 0 0;
+.mandom-main-menu + .mandom-main-product02 {
+  padding-top: 20px;
 }
 .mandom-main-slide__title {
   padding: 20px 20px 30px 20px;
@@ -923,12 +958,14 @@ a {
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.12px;
+  word-break: keep-all;
 }
 .mandom-main-slide-swiper {
   position: relative;
 }
 .mandom-main-slide-swiper .swiper-wrapper {
-  padding-bottom: 86px;
+  padding: 0 60px 0 20px;
+  padding-bottom: 80px;
 }
 .mandom-main-slide-swiper .swiper-slide {
   width: 187px;
@@ -952,7 +989,7 @@ a {
   padding: 20px 15px;
 }
 .mandom-main-slide-swiper .swiper-pagination {
-  bottom: 44px;
+  bottom: 40px;
 }
 .mandom-main-slide-swiper .swiper-pagination-bullet {
   width: 6px;
@@ -977,19 +1014,17 @@ a {
   background-size: 371px 147px;
 }
 .mandom-main-recommend {
-  padding: 50px 20px;
+  padding: 40px 20px;
 }
 .mandom-main-recommend__title {
   margin-bottom: 30px;
+  color: #000;
+  font-family: Pretendard;
   font-size: 24px;
-  font-weight: bold;
-  font-stretch: normal;
   font-style: normal;
+  font-weight: 700;
   line-height: normal;
   letter-spacing: -0.12px;
-  text-align: left;
-  color: #000;
-  word-break: keep-all;
 }
 .mandom-main-recommend-list-item {
   margin-top: 10px;
@@ -1021,13 +1056,11 @@ a {
   width: 100%;
 }
 .mandom-main-product, .mandom-main-product02 {
-  padding: 20px;
-  padding-bottom: 20px;
+  padding: 40px 20px;
   width: 100%;
 }
 .mandom-main-product__title, .mandom-main-product02__title {
   margin-bottom: 30px;
-  padding-top: 30px;
   color: #000;
   font-family: Pretendard;
   font-size: 24px;
@@ -1035,6 +1068,7 @@ a {
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.12px;
+  word-break: keep-all;
 }
 .mandom-main-product-swiper, .mandom-main-product02-swiper {
   position: relative;
@@ -1096,10 +1130,13 @@ a {
   position: relative;
   width: 100%;
   height: auto;
-  padding: 0 0 20px 0;
+  padding: 0 0 40px 0;
 }
 .mandom-main-product--one .mandom-main-product-swiper .swiper, .mandom-main-product--one .mandom-main-product02-swiper .swiper, .mandom-main-product02--one .mandom-main-product-swiper .swiper, .mandom-main-product02--one .mandom-main-product02-swiper .swiper {
   position: relative;
+}
+.mandom-main-product--one .mandom-main-product-swiper .swiper-pagination, .mandom-main-product--one .mandom-main-product02-swiper .swiper-pagination, .mandom-main-product02--one .mandom-main-product-swiper .swiper-pagination, .mandom-main-product02--one .mandom-main-product02-swiper .swiper-pagination {
+  bottom: 0;
 }
 .mandom-main-product--one .mandom-main-product-swiper .mandom-product, .mandom-main-product--one .mandom-main-product02-swiper .mandom-product, .mandom-main-product02--one .mandom-main-product-swiper .mandom-product, .mandom-main-product02--one .mandom-main-product02-swiper .mandom-product {
   display: block;
@@ -1117,9 +1154,13 @@ a {
   bottom: 0;
   left: 0;
 }
+.mandom-main-product02 + .mandom-main-product02 {
+  padding-top: 20px;
+}
 .mandom-main-tips {
   position: relative;
-  padding: 40px 20px 20px;
+  margin: 0;
+  padding: 40px 20px;
 }
 .mandom-main-tips::before {
   content: "";
@@ -1134,10 +1175,38 @@ a {
   background-size: cover;
   z-index: 10;
 }
+.mandom-main-tips-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.mandom-main-tips__nav {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+}
+.mandom-main-tips__nav .swiper-button-next,
+.mandom-main-tips__nav .swiper-button-prev {
+  position: static;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  background: url(../../images/desktop/tips-button.svg) no-repeat 50% 50%;
+  background-size: cover;
+  cursor: pointer;
+}
+.mandom-main-tips__nav .swiper-button-next::after,
+.mandom-main-tips__nav .swiper-button-prev::after {
+  display: none;
+}
+.mandom-main-tips__nav .swiper-button-prev {
+  transform: rotate(180deg);
+}
 .mandom-main-tips__title {
   position: relative;
   z-index: 20;
-  margin-bottom: 30px;
   color: #fff;
   font-family: Pretendard;
   font-size: 24px;
@@ -1200,7 +1269,7 @@ a {
   z-index: 20;
 }
 .mandom-main-banner {
-  margin: 0 20px;
+  margin: 20px 20px;
 }
 .mandom-main-banner a {
   display: block;
@@ -1463,7 +1532,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 .mandom-list-button .btn {
   border-radius: 100px;
@@ -1786,6 +1855,11 @@ body[data-main=bifesta] .mandom-main-slide-swiper::after {
   background: url(../../images/mobile/bifesta/main-slide-bg.svg) no-repeat 50% 100%;
   background-size: 371px 147px;
 }
+body[data-main=bifesta] .mandom-main-tips .mandom-main-tips__nav .swiper-button-prev,
+body[data-main=bifesta] .mandom-main-tips .mandom-main-tips__nav .swiper-button-next {
+  background: url(../../images/desktop/tips-button-black.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
 body[data-main=bifesta] .mandom-main-tips::before {
   background: #ffeab1 url(../../images/mobile/bifesta/main-tips-bg.svg) no-repeat 50% 50%;
   background-size: cover;
@@ -1814,6 +1888,11 @@ body[data-main=lucidol] .mandom-main-slide--bg {
 body[data-main=lucidol] .mandom-main-slide-swiper::after {
   background: url(../../images/mobile/lucidol/main-slide-bg.svg) no-repeat 50% 100%;
   background-size: 371px 147px;
+}
+body[data-main=lucidol] .mandom-main-tips .mandom-main-tips__nav .swiper-button-prev,
+body[data-main=lucidol] .mandom-main-tips .mandom-main-tips__nav .swiper-button-next {
+  background: url(../../images/desktop/tips-button-black.svg) no-repeat 50% 50%;
+  background-size: cover;
 }
 body[data-main=lucidol] .mandom-main-tips::before {
   background: #ffedf7 url(../../images/mobile/lucidol/main-tips-bg.svg) no-repeat 50% 50%;
@@ -1844,6 +1923,11 @@ body[data-main=diane] .mandom-main-slide-swiper::after {
   background: url(../../images/mobile/diane/main-slide-bg.svg) no-repeat 50% 100%;
   background-size: 371px 147px;
 }
+body[data-main=diane] .mandom-main-tips .mandom-main-tips__nav .swiper-button-prev,
+body[data-main=diane] .mandom-main-tips .mandom-main-tips__nav .swiper-button-next {
+  background: url(../../images/desktop/tips-button-black.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
 body[data-main=diane] .mandom-main-tips::before {
   background: #fff9ed url(../../images/mobile/diane/main-tips-bg.svg) no-repeat 50% 50%;
   background-size: cover;
@@ -1873,6 +1957,11 @@ body[data-main=lucido] .mandom-main-slide-swiper::after {
   background: url(../../images/mobile/lucido/main-slide-bg.svg) no-repeat 50% 100%;
   background-size: 371px 147px;
 }
+body[data-main=lucido] .mandom-main-tips .mandom-main-tips__nav .swiper-button-prev,
+body[data-main=lucido] .mandom-main-tips .mandom-main-tips__nav .swiper-button-next {
+  background: url(../../images/desktop/tips-button-black.svg) no-repeat 50% 50%;
+  background-size: cover;
+}
 body[data-main=lucido] .mandom-main-tips::before {
   background: #edf7ff url(../../images/mobile/lucido/main-tips-bg.svg) no-repeat 50% 50%;
   background-size: cover;
@@ -1901,6 +1990,11 @@ body[data-main=dentalpro] .mandom-main-slide--bg {
 body[data-main=dentalpro] .mandom-main-slide-swiper::after {
   background: url(../../images/mobile/dentalpro/main-slide-bg.svg) no-repeat 50% 100%;
   background-size: 371px 147px;
+}
+body[data-main=dentalpro] .mandom-main-tips .mandom-main-tips__nav .swiper-button-prev,
+body[data-main=dentalpro] .mandom-main-tips .mandom-main-tips__nav .swiper-button-next {
+  background: url(../../images/desktop/tips-button-black.svg) no-repeat 50% 50%;
+  background-size: cover;
 }
 body[data-main=dentalpro] .mandom-main-tips::before {
   background: #ffeded url(../../images/mobile/dentalpro/main-tips-bg.svg) no-repeat 50% 50%;
