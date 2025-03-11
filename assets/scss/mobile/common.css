@@ -1912,7 +1912,7 @@ body[data-main='diane'] .header-main .main-logo a:after {
 }
 body[data-main='bifesta'] .mandom-header-logo {
   width: 76px;
-  height: 29px;
+  height: 20px;
   background: url(../../images/mobile/bifesta/logo.svg) no-repeat 50% 50%;
   background-size: cover;
 }
